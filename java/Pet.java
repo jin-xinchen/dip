@@ -57,3 +57,22 @@ public class PetComparator implements Comparator, Serializable{
   //Output: Parrot, Cat, Dog.
  }
 }
+
+With Buffering: yields better performance
+try{
+ File f = new File("myFile.txt");
+ FileInputStream fis = new FileInputStream(f);
+ BufferedInputStream bis = new BufferedInputStream(fis);
+ int count = 0;
+ int b = 0 ;
+ while((b = bis.read()) != -1){
+  if(b== '\n') {
+   count++;
+  }
+ }
+ //bis should be closed in a finally block.
+ bis.close() ;
+}
+catch(IOException io){}
+Note: bis.read() takes the next byte from the input buffer and only
+rarely access the underlying operating system.
