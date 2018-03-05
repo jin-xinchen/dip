@@ -1,0 +1,152 @@
+ Cross-origin resource sharing (CORS)
+Resource:
+
+1.Cross-origin resource sharing
+https://en.wikipedia.org/wiki/Cross-origin_resource_sharing#How_CORS_works
+2.https://www.w3.org/TR/cors/
+3. Example:
+ 3.1.Servlet - CORS: http://www.logicbig.com/tutorials/java-ee-tutorial/java-servlet/servlet-cors/
+ 3.2.Spring CORS support: http://www.logicbig.com/tutorials/spring-framework/spring-web-mvc/spring-cors/
+3.3.Servlet - Servlet with Tomcat CorsFilter example:http://www.logicbig.com/tutorials/java-ee-tutorial/java-servlet/servlet-with-tomcat-cors-filter/
+
+ //for Preflight
+  @Override
+  protected void doOptions(HttpServletRequest req, HttpServletResponse resp)
+          throws ServletException, IOException {
+      setAccessControlHeaders(resp);
+      resp.setStatus(HttpServletResponse.SC_OK);
+  }
+
+  private void setAccessControlHeaders(HttpServletResponse resp) {
+      resp.setHeader("Access-Control-Allow-Origin", "http://localhost:9000");
+      resp.setHeader("Access-Control-Allow-Methods", "GET");
+  }
+
+ 
+
+ 
+
+From: https://amodernstory.com/2014/12/27/using-cors-headers-with-java-example/ 
+
+import javax.servlet.*;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+public class CORSFilter implements Filter {
+
+    @Override
+    public void init(FilterConfig filterConfig) throws ServletException {}
+
+    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain) throws IOException, ServletException {
+    HttpServletRequest request = (HttpServletRequest) servletRequest;
+    System.out.println("Request: " + request.getMethod());
+
+    HttpServletResponse resp = (HttpServletResponse) servletResponse;
+    resp.addHeader("Access-Control-Allow-Origin","*");
+    resp.addHeader("Access-Control-Allow-Methods","GET,POST");
+    resp.addHeader("Access-Control-Allow-Headers","Origin, X-Requested-With, Content-Type, Accept");
+
+    // Just ACCEPT and REPLY OK if OPTIONS
+    if ( request.getMethod().equals("OPTIONS") ) {
+        resp.setStatus(HttpServletResponse.SC_OK);
+        return;
+    }
+    chain.doFilter(request, servletResponse);
+}
+
+ @Override
+public void destroy() {}
+}
+
+To web.xml just add
+<filter> <filter-name>CorsFilter</filter-name> <filter-class>CORSFilter</filter-class> </filter> <filter-mapping> <filter-name>CorsFilter</filter-name> <url-pattern>*</url-pattern> </filter-mapping>
+
+ 
+
+ 
+
+4.My Test Example:
+
+Java SE Version:1.7.0_72
+
+ 
+
+package com.jin.util; 
+
+// to  <filter-class>com.jin.util.CorsResponseFilter</filter-class>
+
+import java.io.IOException;
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse; 
+
+public class CorsResponseFilter implements Filter { 
+
+ ...
+
+     public void doFilter(ServletRequest request, ServletResponse response,
+                FilterChain chain) throws IOException, ServletException {
+        HttpServletRequest req = (HttpServletRequest) request;
+//        System.out.println("Request: " + request.getMethod());
+        HttpServletResponse resp = (HttpServletResponse) response;
+        //resp.addHeader("Access-Control-Allow-Origin", "*"); //"*" cannot work.
+        resp.addHeader("Access-Control-Allow-Origin", "http://localhost:3200");
+        resp.addHeader("Access-Control-Allow-Methods", "GET,POST");
+        resp.addHeader("Access-Control-Allow-Headers",
+                       "Origin, X-Requested-With,Content-Type, Accept");
+
+        // Just ACCEPT and REPLY OK if OPTIONS
+        if (req.getMethod().equals("OPTIONS")) {
+            resp.setStatus(HttpServletResponse.SC_OK);
+            return;
+        }
+        chain.doFilter(req, response);
+    }
+
+In web.xml
+
+<filter>
+  <filter-name>CorsFilter</filter-name>
+  <filter-class>com.jin.util.CorsResponseFilter</filter-class>
+</filter>
+<filter-mapping>
+  <filter-name>CorsFilter</filter-name>
+  <url-pattern>/*</url-pattern>
+</filter-mapping>
+
+showing the following Error if no CorsResponseFilter:
+Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://192.168.10.116:8080/jin3/servlet/LoginBean?action=loginVerify. (Reason: CORS header ¡®Access-Control-Allow-Origin¡¯ missing).
+
+
+Other Example:
+ From: http://stackoverflow.com/questions/18264334/cross-origin-resource-sharing-with-spring-security
+
+public void doFilter(ServletRequest request, ServletResponse res, FilterChain chain)
+        throws IOException, ServletException {
+
+    LOGGER.info("Start API::CORSFilter");
+    HttpServletRequest oRequest = (HttpServletRequest) request;
+    HttpServletResponse response = (HttpServletResponse) res;
+    response.setHeader("Access-Control-Allow-Origin", "*");
+    response.setHeader("Access-Control-Allow-Methods", "POST,PUT, GET, OPTIONS, DELETE");
+    response.setHeader("Access-Control-Max-Age", "3600");
+    response.setHeader("Access-Control-Allow-Headers",
+            " Origin, X-Requested-With, Content-Type, Accept,AUTH-TOKEN");
+    if (oRequest.getMethod().equals("OPTIONS")) {
+        response.flushBuffer();
+    } else {
+        chain.doFilter(request, response);
+    }
+}
+
+Ref:
+
+http://stackoverflow.com/questions/40053767/angularjs-springsecurity-cors-issue 
+
+http://restlet.com/company/blog/2015/12/15/understanding-and-using-cors/ 
