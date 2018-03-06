@@ -77,6 +77,22 @@ public class TestLambda{
 
   }
 
+//Anonymous inner class
+  @Test
+  public void test5(){
+    List<Employee> list = filterEmployee(Employee, 
+       new MyPredicate<Employee>(){
+       @Override
+        public boolean test(Employee t){
+         return t.getSalary() <= 1000;
+        }
+    });
+
+    for(Employee employee: list){
+       System.out.println(employee);
+    }
+  }
+
 }
 
 //option 1 using interface
@@ -98,3 +114,4 @@ public class FilterEmployeeBySalary implements MyPredicate<Employee>{
     return t.getSalary() >=1000;
   }
 }
+
