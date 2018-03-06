@@ -102,7 +102,13 @@ public class TestLambda{
     
     list.forEach(System.out::println);
   }
-
+//option 4 
+  @Test
+  public void test7(){
+    employees.stream()
+             .filter((e)=>e.getSalary()>=1000)
+             .forEach(System.out::println);
+  }
 
 }
 
