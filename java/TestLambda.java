@@ -77,7 +77,7 @@ public class TestLambda{
 
   }
 
-//Anonymous inner class
+//option 2£ºAnonymous inner class
   @Test
   public void test5(){
     List<Employee> list = filterEmployee(Employee, 
@@ -92,6 +92,17 @@ public class TestLambda{
        System.out.println(employee);
     }
   }
+
+//option3 
+// Lambda
+
+  @Test 
+  public void test6(){
+    List<Employee> list = filterEmployee(employees, (e) => e.getSalary() <= 1000;);
+    
+    list.forEach(System.out::println);
+  }
+
 
 }
 
