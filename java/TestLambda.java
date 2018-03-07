@@ -21,7 +21,7 @@ public class TestLambda{
   //Lambda
   @Test
   public void test2(){
-    Comparator<Integer> com=(x,y)=>Integer.compare(x,y);
+    Comparator<Integer> com=(x,y)->Integer.compare(x,y);
     TreeSet<Integer> ts = new TreeSet<>(com);
   }
 
@@ -98,7 +98,7 @@ public class TestLambda{
 
   @Test 
   public void test6(){
-    List<Employee> list = filterEmployee(employees, (e) => e.getSalary() <= 1000;);
+    List<Employee> list = filterEmployee(employees, (e) -> e.getSalary() <= 1000;);
     
     list.forEach(System.out::println);
   }
@@ -106,7 +106,7 @@ public class TestLambda{
   @Test
   public void test7(){
     employees.stream()
-             .filter((e)=>e.getSalary()>=1000)
+             .filter((e)->e.getSalary()>=1000)
              .limit(2)
              .forEach(System.out::println);
 
