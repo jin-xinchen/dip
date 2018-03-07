@@ -1,0 +1,99 @@
+div.modal-header {
+    color: black;
+}
+.modal-header {
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+    min-height: 16.6px;
+}
+div.modal-header h3 {
+    color: black !important;
+    z-index: 999;
+}
+h3, .h3 {
+    font-size: 24px;
+}
+h1, h2, h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.modal {
+    text-align: center;
+}
+.modal-body {
+    position: relative;
+    padding: 15px;
+}
+div.modal-footer {
+    margin-top: 0;
+}
+.modal-footer {
+    padding: 15px;
+    text-align: right;
+    border-top: 1px solid #e5e5e5;
+}
+.modal-footer .btn + .btn {
+    margin-left: 5px;
+    margin-bottom: 0;
+}
+button.btn-black {
+    background-color: #000 !important;
+    color: #eee !important;
+}
+.btn {
+    font-size: 14px;
+    text-transform: default;
+    letter-spacing: none;
+}
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: 6px 9pt;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.btn, .dropdown-header, .dropdown-menu > li > a {
+    line-height: 1.6;
+    white-space: nowrap;
+}
+.btn-primary.active, .btn-primary:active, .btn-primary:hover, .open > .dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #2579a9;
+    border-color: #1f648b;
+        border-top-color: rgb(31, 100, 139);
+        border-right-color: rgb(31, 100, 139);
+        border-bottom-color: rgb(31, 100, 139);
+        border-left-color: rgb(31, 100, 139);
+}
+.wj-popup-style{
+   /* height:200px;*/
+width:560px;
+}
+
+/*
+.wj-popup-backdrop {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1500;
+    background-color: rgba(0,0,0,.5);
+}
+*/
+.strong{
+font-weight: 600;
+font-family: "Helvetica Neue",Arial,Helvetica,Geneva,sans-serif;
+
+
+}

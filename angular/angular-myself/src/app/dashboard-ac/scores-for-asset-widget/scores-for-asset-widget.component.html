@@ -1,0 +1,79 @@
+<!--[style .display]=" showingPage ? ' inline-block ! important':'inline-block!important'" -->
+
+<div class="card {{flipState}}">
+<div class="{{recentScoresForAsset.spinner?'acspin':''}} acspin-absolute"></div>
+  <div class="front inner_border">
+    <!--{{showingPage}}  [ class. showing]="showing" [class. hide]="!showing" [style. display]="showing?'block':'none'" -->
+    <!-- div>scores-for-asset-widget</div -->
+    <div class="dashboard location_nameDRSFA">{{recentScoresForAsset.name}}</div>
+    <div class="dashboard location_average_score">{{recentScoresForAsset.current_D_TOTAL_RATING_SCORE_NUM}}<span class="dash-label">:AVG</span></div>
+		<div class="dashboard location_current_score">{{recentScoresForAsset.recent_D_TOTAL_RATING_SCORE_NUM}}<span class="dash-label">:LAST</span></div>
+    <div class="dashboard location_recent_score {{recentScoresForAsset.colour}}">
+				<span class="{{recentScoresForAsset.icon}}"></span> {{recentScoresForAsset.difference}}
+			</div>
+			<div class="dashboard location_last_modified widgetDate">{{recentScoresForAsset.formattedDate | date: 'yyyy MMM dd-HH:mm'}}</div>
+    <div>
+      <button id="btnGoToSetting1" class="widget icon-Settings" (click)="flipWidget()"></button>
+    </div>
+
+  </div>
+  <div class="back inner_border">
+    <p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
+    <form #f="ngForm">
+      <label>Asset Layer:</label>
+      <select 
+        name="assetcontrolsysid" 
+        id="assetcontrolsysid" 
+        class="widgetItem"  
+        [(ngModel)]="recentScoresForAsset.ASSET_CONTROL_SYSID">
+        <option 
+            *ngFor="let AL of AssetLayers" 
+            [value]="AL.ASSET_CONTROL_SYSID" 
+            [selected]="AL.ASSET_CONTROL_SYSID === recentScoresForAsset.ASSET_CONTROL_SYSID">
+            {{ AL.ASSET_LAYER_NAME }}
+        </option>
+      </select>
+      <label>Asset Sys ID:</label>
+      <input type="text" name="assetsysid" [(ngModel)]="recentScoresForAsset.ASSET_SYSID" required #assetsysid="ngModel"
+                   
+                   class="form-control assetList" >
+
+
+    </form> 
+<!--
+    <p>First name value: {{ assetsysid.value }}</p>
+    <p>First name valid: {{ assetsysid.valid }}</p>
+    <p>Form valid: {{ f.valid }} {{f.value|json}}</p>
+    <select name="repeatSelect" id="repeatSelect" ng-model="recentScoresForAsset.ASSET_CONTROL_SYSID" class="widgetItem">
+      <option ng-repeat="AL in AssetLayers" value="{{AL.ASSET_CONTROL_SYSID}}">{{AL.ASSET_LAYER_NAME}}</option>
+    </select>   
+     <form #f="ngForm">
+      <select name="state" ngModel>
+        <option value="" disabled>Choose a state</option>
+        <option *ngFor="let state of states" [ngValue]="state">
+          {{ state.abbrev }}
+        </option>
+      </select>
+             <br> {{selectedType1test}}<br>
+        <select 
+          name="repeatSelect" 
+          id="repeatSelect" 
+          class="widgetItem"  
+          [ngModel]="selectedType1test">
+          <option 
+              *ngFor="let item of dashBoardWidgetTypes" 
+              [value]="item.dashType" 
+              [selected]="item.dashType === selectedType1test">
+              {{ item.displayName }}
+          </option>
+        </select>
+    </form>
+     <p>Form value: {{ f.value | json }}</p>      
+ -->           
+    <button id="btnDeleteID" class="icon-Delete removeWidgetFromPanel" (click)="RemoveDefault()" title="Remove This Widget"></button>
+    <div class="setting buttons container">
+      <button id="btnAcceptableID" type="button" class="widget icon-Acceptable" (click)="flipWidget(f)"></button>
+      <button id="btnDeleteID" class="widget icon-Unacceptable" (click)="cancelDefault(f)" title="Cancel"></button>
+    </div>
+  </div>
+</div>

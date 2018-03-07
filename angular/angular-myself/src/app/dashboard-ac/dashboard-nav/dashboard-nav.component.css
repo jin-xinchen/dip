@@ -1,0 +1,56 @@
+.navbar{
+	background-color: #eee;
+	font: 1em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	z-index: 999!important;
+    padding:2px 0 2px 0;
+}
+.navbar button{
+    background-color: #aaa !important;
+    margin-top: 1px;
+    color: white;
+    border-color: #d4dbe0;
+    margin-bottom: 0;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: 6px 9pt;
+    border-radius: 4px;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    
+
+    line-height: 1.6;
+    white-space: nowrap;
+
+    background-image: none;
+
+    outline: 0;
+
+    font-family: inherit;
+
+    text-transform: none;
+
+    font: inherit;
+    margin: 0;
+
+    box-sizing: border-box;
+
+    letter-spacing: 0;
+
+    overflow: visible;
+}
+.navbar button:hover {
+    background-color: #777!important;
+    color:#eee;
+    background-image: none;
+
+}
+

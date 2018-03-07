@@ -1,0 +1,53 @@
+<nav class="navbar">
+  <!--
+     <a routerLink="/dashboard"  routerLinkActive="active">Dashboard</a>
+     <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
+     -->
+  <button (click)="saveDashboardConfig()">Save Dashboard</button>
+  <button id="btnReset" style="display:none;">Reset Dashboard</button>
+  <button (click)="resetDashboardConfig()">Reset Dashboard</button>
+  <button (click)="addDashWidget()">Add Widget</button>
+  <!--button (click)="add(heroName.value); heroName.value=''">Add</button-->
+  <button id="btnPopup" style="display:none;">Show Popup</button>
+  <wj-popup owner="#btnPopup" style="padding:12px">
+    <p>Press one of the buttons below to hide the Popup.</p>
+    <hr/>
+    <button class="wj-hide-ok" ng-click="handleOK()">OK</button>
+    <button class="wj-hide-cancel">Cancel</button>
+  </wj-popup>
+  <!-- owner="#btnReset" -->
+  <wj-popup #popupReset hideTrigger="none" class="wj-popup-style" [hideTrigger]="'None'" [modal]=true>
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Reset Dashboard</h3>
+      </div>
+      <div class="modal-body">
+        This will erase all widgets on your dashboard, then retrieve the default dashboard!
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-black" (click)="hidePopup()">Cancel</button>
+        <button class="btn btn-primary btn-black" (click)="resetDashboard()">Ok</button>
+      </div>
+
+
+    </div>
+  </wj-popup>
+
+  <wj-popup #popupSave hideTrigger="none" class="wj-popup-style" [hideTrigger]="'None'" [modal]=true>
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="strong">Save</h3>
+      </div>
+      <div class="modal-body">
+        Save Completed.
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary btn-black" (click)="hidePopupSave()">Ok</button>
+      </div>
+
+
+    </div>
+  </wj-popup>
+
+</nav>
+<!--div *ngFor="let msg of NavLog">{{msg}}</div-->

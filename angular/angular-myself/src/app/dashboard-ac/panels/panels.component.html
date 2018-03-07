@@ -1,0 +1,24 @@
+<div class="panels"> <!-- *ngIf="Widgets | async as Widgets; else loading"   < ng-template #loading>Loading...</ ng-template> -->
+    <!-- default-dash-widget></default-dash-widget -->
+    <div class="widgetsCSS" *ngFor="let widget of dbdService.Widgets; count as count; index as i" [ngStyle]="{'display': widget.dashtype?'':'none'}">
+        <div [ngSwitch]="widget.dashtype">
+        <default-dash-widget *ngSwitchCase="dbdService.dashBoardWidgetTypes[0].dashType" [defaultData]="widget"></default-dash-widget>
+        <scores-for-asset-widget *ngSwitchCase="dbdService.dashBoardWidgetTypes[1].dashType" [RecentSFA]="widget"></scores-for-asset-widget>
+        <answer-count-for-asset-type *ngSwitchCase="dbdService.dashBoardWidgetTypes[2].dashType" [RecentSFAT]="widget"></answer-count-for-asset-type>
+        <alerts-ticker *ngSwitchCase="dbdService.dashBoardWidgetTypes[3].dashType" [defaultData]="widget"></alerts-ticker>
+        <answer-count-for-asset-type-donut *ngSwitchCase="dbdService.dashBoardWidgetTypes[4].dashType" [defaultData]="widget"></answer-count-for-asset-type-donut>
+        <answer-count-per-time-period-for-asset-type *ngSwitchCase="dbdService.dashBoardWidgetTypes[5].dashType" [defaultData]="widget"></answer-count-per-time-period-for-asset-type>
+        <audit-count-per-time-period-for-asset-type *ngSwitchCase="dbdService.dashBoardWidgetTypes[6].dashType" [defaultData]="widget"></audit-count-per-time-period-for-asset-type>
+        <total-audit-score-count-for-asset-type *ngSwitchCase="dbdService.dashBoardWidgetTypes[7].dashType" [defaultData]="widget"></total-audit-score-count-for-asset-type>
+<div style="display:none;" *ngSwitchDefault>...{{widget.flipState}}</div>
+        </div>
+    </div>
+</div>
+<!--
+<div style="max-height:600px;width:400px;position:fixed;bottom:3px;right:10px;overflow: scroll;z-index:9999999;border: 1px red solid;">
+   <h1>logger</h1>
+   <h2>Event:{{eventNav}}</h2>
+   <div *ngFor="let msg of logger.logs">{{msg}}</div>
+   <div>Total count:{{dbdService.Widgets.length}}</div>
+</div>
+-->

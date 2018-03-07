@@ -1,0 +1,17 @@
+<!--[style .display]=" showingPage ? ' inline-block ! important':'inline-block!important'" -->
+  <div class="card {{flipState}}">
+    <div class="front inner_border">  <!--{{showingPage}}  [ class. showing]="showing" [class. hide]="!showing" [style. display]="showing?'block':'none'" -->
+
+      <div>answer-count-for-asset-type-donut</div>
+      <div>
+        <button id="btnGoToSetting1" class="widget icon-Settings" (click)="flipWidget()"></button>
+      </div>
+
+    </div>
+    <div class="back inner_border">
+      <div>
+        <button id="btnAcceptableID" type="button" class="widget icon-Acceptable" (click)="flipWidget()"></button>
+        <button id="btnDeleteID" class="icon-Delete" (click)="RemoveDefault()"></button>
+      </div>
+    </div>
+  </div>

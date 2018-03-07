@@ -1,0 +1,84 @@
+@keyframes acspin {
+  to {transform: rotate(360deg);}
+}
+
+.acspin,
+.acspin:before {
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+}
+
+.acspin:before {
+  content: '';
+  display: block;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  border-top-color: #33A;
+  animation: acspin .6s linear infinite;
+}
+
+.acspin-absolute {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  margin-top: -10px;
+  margin-left: -10px;
+  z-index:1200!important;
+}
+
+/* Animations */
+
+.acspin-add,
+.acspin-remove {
+  animation-fill-mode: both;
+  animation-duration: .4s;
+}
+
+.acspin-add {
+  animation-name: acspin-add;
+}
+
+@keyframes acspin-add {
+  from {transform: scale(0);}
+  to {transform: scale(1);}
+}
+
+.acspin-remove {
+  animation-name: acspin-remove;
+}
+
+@keyframes acspin-remove {
+  to {transform: scale(0);}
+}
+
+/*
+
+.selector {
+  @include animation(spin 10s linear);
+  @include animation-delay(700ms); // Optional
+}
+
+// Generates:
+// -webkit-animation: spin 10s;
+// -webkit-animation-delay: 700ms;
+// -webkit-animation-iteration-count: infinite;
+// -webkit-animation-timing-function: linear;
+
+
+// Keyframe Rules (required to generate animation)
+@-moz-keyframes spin {
+  from { -moz-transform: rotate(0deg); }
+  to { -moz-transform: rotate(360deg); }
+}
+
+@-webkit-keyframes spin {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
+}
+*/

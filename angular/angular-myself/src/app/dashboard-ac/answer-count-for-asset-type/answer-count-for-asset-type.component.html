@@ -1,0 +1,83 @@
+<!--[style .display]=" showingPage ? ' inline-block ! important':'inline-block!important'" -->
+<div class="card {{flipState}}">
+  <div class="{{recentScoresForAssetType.spinner?'acspin':''}} acspin-absolute"></div>
+  <div class="front inner_border">
+    <!--<div>answer-count-for-asset-type</div>
+      {{showingPage}}  [ class. showing]="showing" [class. hide]="!showing" [style. display]="showing?'block':'none'" -->
+
+    
+    <div class="dashboard location_name">Answer Count for {{recentScoresForAssetType.assettype?recentScoresForAssetType.assettype:recentScoresForAssetType.name}}</div>
+
+    <div class="dashboard location_current_score">{{recentScoresForAssetType.AUDIT_ANSWERS_TYPE_VALUE}}</div>
+    <div class="dashboard location_recent_score {{recentScoresForAssetType.colour}}">
+      <div class="dashboard location_current_score">{{recentScoresForAssetType.ASSETTYPE_COUNT}}</div>
+    </div>
+
+    <div class="dashboard location_last_modified widgetDate">{{recentScoresForAssetType.formattedDate | date: 'yyyy MMM dd-HH:mm'}}</div>
+
+
+    <div>
+      <button id="btnGoToSetting1" class="widget icon-Settings" (click)="flipWidget()"></button>
+    </div>
+
+  </div>
+  <div class="back inner_border">
+    <form #f="ngForm">
+    <p class="dashboard location_recent_score red" style="display:none;">{{recentScoresForAssetType.error}}</p>
+      <label>Asset Type:</label>
+      <!-- ( cha ng e)=" onChangeAssetType( $event.target.value)"  ( ngModelChange )="onCh angeAssetType2($event)"-->
+      <select name="assettypesysid" id="assettypesysid" class="widgetItem" [(ngModel)]="recentScoresForAssetType.ASSET_TYPE_SYSID"
+      (ngModelChange)="onChangeAssetType2($event)">
+        <option 
+            *ngFor="let assetType of assetTypeList" 
+            [value]="assetType.ASSETTYPE_SYSID" 
+            [selected]="assetType.ASSETTYPE_SYSID === recentScoresForAssetType.ASSET_TYPE_SYSID">
+            {{ assetType.name }}
+        </option>
+      </select>
+
+      <div>
+        <label>Question Type:</label>
+      </div>
+      <div>
+
+        <select name="d_audit_question_type_codeEle" id="d_audit_question_type_codeEle" class="widgetItem" [(ngModel)]="recentScoresForAssetType.D_AUDIT_QUESTION_TYPE_CODE"
+        (ngModelChange)="onChangeQuestionType($event)">
+        <option 
+            *ngFor="let QT of QuestionType" 
+            [value]="QT.CODE" 
+            [selected]="QT.CODE === recentScoresForAssetType.D_AUDIT_QUESTION_TYPE_CODE">
+            {{ QT.DESCRIPTION }}
+        </option>
+      </select>
+      </div>
+      <div>
+        <label>Answer Value:</label>
+      </div>
+      <div>
+        <!--
+            <input type="text" name="auditanswerstypevalueele" [(ngModel)]="recentScoresForAssetType.AUDIT_ANSWERS_TYPE_VALUE" required #auditanswerstypevalueele="ngModel"
+                   class="form-control assetList" >
+        [selectedValue]="recentScoresForAssetType.AUDIT_ANSWERS_TYPE_VALUE"
+        <w j -aut o-complete #ac1></wj -aut o-complete>
+        -->
+        
+        <wj-auto-complete #wjanswers class="widgetItem" [(text)]="recentScoresForAssetType.AUDIT_ANSWERS_TYPE_VALUE" 
+        (textChanged)="answersTextChanged($event)"
+        [itemsSource]="AnswersArray" placeholder=""
+        >
+        </wj-auto-complete>
+
+        <!--
+<wj- auto-comp lete i t e m s-s o u r c e- f u n c t i o n="AnswersArray" is-editable="false" 
+display-member-path="text" selected-value-path="value" text="recentScoresForAssetType.AUDIT_ANSWERS_TYPE_VALUE" 
+  placeholder=""> 
+</wj-auto-complete>required="true"-->
+      </div>
+      <div class="setting buttons container">
+        <button id="btnAcceptableID" type="button" class="widget icon-Acceptable" (click)="flipWidget()"></button>
+        <button id="btnDeleteID" class="icon-Delete" (click)="RemoveDefault()"></button>
+      </div>
+    </form>
+  </div>
+</div>

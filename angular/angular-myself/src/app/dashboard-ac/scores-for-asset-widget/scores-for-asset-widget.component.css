@@ -1,0 +1,41 @@
+ .dir-dashRecentScoresForAsset{  
+    padding: 10px 10px 10px 15px;
+    height: 280px;
+    min-width: 195px;
+    max-width:195px;
+    }
+div.dashboard.location_nameDRSFA {
+    color: #666;
+    font-size: 20px;
+    font-weight: bold;
+    padding-right: 5px;
+    padding-left: 5px;
+    line-height: 24px;
+    /* height: 2.1em; */
+    margin-top: 5px;
+}
+div.dashboard.location_average_score {
+    color: #bbb;
+    font-size: 38px;
+    font-weight: bold;
+    line-height: 46px;
+}
+div.dashboard.location_current_score {
+    color: #666;
+    font-size: 38px;
+    font-weight: bold;
+    line-height: 46px;
+    padding: 2px 0px 0px 0px;
+}   
+
+
+/* showing page*/
+
+
+span.dash-label {
+    font-size: 14px;
+    line-height: 40px;
+    color: navy;
+}
+
+

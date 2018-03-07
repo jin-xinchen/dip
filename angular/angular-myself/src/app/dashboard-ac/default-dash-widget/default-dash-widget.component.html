@@ -1,0 +1,55 @@
+<div class="card {{flipState}}">
+    <div class="front inner_border">  <!--{{showingPage}}  [ class. showing]="showing" [class. hide]="!showing" [style. display]="showing?'block':'none'" -->
+
+      <div class="dashboard location_name">Default Widget</div>
+
+      <div>
+        <button id="btnGoToSetting1" class="widget icon-Settings" (click)="flipWidget()"></button>
+      </div>
+
+    </div>
+    <div class="back inner_border">
+      <!--{{settingPage}}
+        [ng Class]="{'showing':!showing,
+                                              'hide':showing}"
+                                   [ng Style]="{display:!showing?'block':'none'}"
+      -->
+      <div>
+        <label>Dash Widget Type:</label>
+<!--
+     <form #f="ngForm">
+      <select name="state" ngModel>
+        <option value="" disabled>Choose a state</option>
+        <option *ngFor="let state of states" [ngValue]="state">
+          {{ state.abbrev }}
+        </option>
+      </select>
+             <br> {{selectedType1test}}<br>
+        <select 
+          name="repeatSelect" 
+          id="repeatSelect" 
+          class="widgetItem"  
+          [ngModel]="selectedType1test">
+          <option 
+              *ngFor="let item of dashBoardWidgetTypes" 
+              [value]="item.dashType" 
+              [selected]="item.dashType === selectedType1test">
+              {{ item.displayName }}
+          </option>
+        </select>
+    </form>
+     <p>Form value: {{ f.value | json }}</p>      
+ -->
+         
+<!--  ([ngModel])="selectedType1"
+  // or [ngValue]="dtype.dashType"-->
+        <wj-combo-box [itemsSource]="dashBoardWidgetTypes" [isEditable]="false"
+        [selectedValuePath]="'dashType'" [displayMemberPath]="'displayName'" [selectedIndex]="selectedIndex"
+         (selectedIndexChanged)="onSelectedIndexChanged($event)" [(selectedValue)]="selectedType"> 
+         </wj-combo-box>
+        <!-- wj-input-number [(value)]="amount"></wj-input-number { { selectedIndex}}  { { selectedType}} -->
+        <button id="btnAcceptableID" type="button" class="widget icon-Acceptable" (click)="flipWidget()"></button>
+        <button id="btnDeleteID" class="icon-Delete" (click)="RemoveDefault()"></button>
+      </div>
+    </div>
+  </div>

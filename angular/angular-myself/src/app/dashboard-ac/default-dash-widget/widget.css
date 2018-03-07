@@ -1,0 +1,68 @@
+
+button.widget.icon-Settings {
+    position: absolute;
+    margin-left: -10%;
+    bottom: 2px;
+}
+div.setting.buttons.container {
+    position: absolute;
+    margin-left: 25%;
+    bottom: 2px;
+}
+
+.form-control {
+ /*
+    width: 100%;
+    height: 36px;
+   */
+    padding: 6px 9pt;
+    background-color: #fff;
+    border: 1px solid #d4dbe0;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+
+    -webkit-transition: none;
+transition: none;
+
+}
+
+div.back.inner_border input.form-control {
+    width: 80%;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    /*height: 24px;*/
+    font-size: 16px;
+}
+
+/* For scores-for-asset-widget, answer-count-for-asset-type */
+div.dashboard.location_recent_score {
+    color: #666;
+    line-height: 48px;
+    font-size: 34px;
+}
+div.dashboard.location_recent_score.green {
+	color: #33cc33;
+}
+
+div.dashboard.location_recent_score.red {
+	color: #f5686e;
+}
+
+div.dashboard.location_recent_score.green span.icon-Arrowhead_Up,
+div.dashboard.location_recent_score.red span.icon-Arrowhead_Down {
+	font-size: 24px;
+	position: relative;
+	top: -10px;
+}
+
+div.dashboard.location_last_modified {
+    color: #666;
+    font-size: 16px;
+}
+.widgetDate {
+    position: absolute;
+    margin: auto;
+    width: 100%;
+    bottom: 46px;
+}

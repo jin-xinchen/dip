@@ -1,0 +1,123 @@
+button.widget.icon-Settings{
+	font-size: 18px;
+}
+button.widget.icon-Acceptable {
+	font-size: 18px;
+	margin-right: 2px;
+	margin-left: 2px;
+}
+button.widget.icon-Unacceptable {
+	font-size: 18px;
+	margin-right: 2px;
+	margin-left: 2px;
+}
+button.icon-Delete {
+	font-size: 18px;
+}
+
+
+.removeWidgetFromPanel {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border: blue;
+    color: black;
+    background-color: #efefdf;
+	padding: 0 0 0 0;
+}
+button.removeWidgetFromPanel:hover {
+    background-color: #ce0000 !important;
+	font-size: 20px;
+    color: #ffffff !important;
+}
+
+
+div.card {
+	position: relative; 
+	min-width: 196px;
+	max-width: 196px;
+	height: 278px;
+
+	display: inline-block!important; /*table-cell;*/
+	background-color:#999;
+}
+div.inner_border {
+	text-align: center;
+	font-size: 1em!important;
+	border: 1px solid #999;
+	height: 100%;
+    z-index:1000!important;
+	border-right: 2px solid #999;
+	margin:0 auto;
+	background-color: #FFF!important;
+	color: #333333!important;
+
+	  position: absolute;
+  top:0px;
+  	width: 196px;
+	height: 278px;
+}
+/*.back.inner_border {}*/
+.showing{
+	display:block;
+}
+.hide{
+	display:none;
+}
+/* Flip Animation */
+/* Stack both divs and hide their backs */
+.card .front, .card .back{
+ 
+    -webkit-backface-visibility: hidden;
+       -moz-backface-visibility: hidden;
+         -o-backface-visibility: hidden;
+            backface-visibility: hidden;		
+	
+	/* Transitions to animate the flip */ 
+	transition: transform 0.3s linear 0s;
+	-webkit-transition: -webkit-transform 0.3s linear 0s;
+		
+	/* Set perspective */
+    transform: perspective(600px);
+    -webkit-transform: perspective(600px);
+	/*width: 100%;*/
+}
+ 
+/* The .back element should be rotated at first, facing his back, hidden*/
+.card .back{
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+}
+ 
+/* The .front card rotates 180 degrees when clicked*/
+.card.flipForward .front{
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+}
+ 
+/* The .back card has to rotate to 0 degrees and be visible*/
+.card.flipForward .back{
+	transform: rotateY(0);
+	-webkit-transform: rotateY(0);
+}
+
+.widgetItem{
+  width:80%;margin:auto;
+}
+.error{
+	color:red;
+}
+
+div.dashboard.location_name {
+    color: #666;
+    font-size: 22px;
+    font-weight: bold;
+    padding-right: 5px;
+    padding-left: 5px;
+    line-height: 24px;
+    /*height: 2.1em;*/
+    margin-top: 5px;
+}
+label {
+    font-weight: 700;
+}
