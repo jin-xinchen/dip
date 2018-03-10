@@ -4,9 +4,9 @@ import org.junit.Test;
 
 //Lambda for @FunctionalInterface
 //()->{};  (parameters list)->{};
-//()->{xx; return v;}
+//()->{xx;  return v;}
 public class Lambda01{
-
+ 
   @Test
   public void test1(){
     int num = 0;         //for jdk1.8 default is final
