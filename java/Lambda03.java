@@ -14,7 +14,17 @@ Predicater<T>  boolean test(T t);
 BiFunction<T,U,R>  R apply(T t, U u);
 BinaryOperater<T>  T apply(T t1, T t2);
 
-UnaryOperater<T> T apply(T t);
+UnaryOperater<T> T apply(T t); From Function 
+
+BiConsumer<T , U>  void accept(T t,U u);
+
+ToIntFunction<T>
+ToLongFunction<T>
+ToDoubleFunction<T>   
+
+IntFunction<R>
+LongFunction<R>
+DoubleFunction<R> 
 
 
 **/
