@@ -1,0 +1,4 @@
+ng build -d /Angular2AuditCompliance/dashboard -bh /Angular2AuditCompliance/dashboard/ -aot -prod
+
+http://172.16.1.6:885/Angular2AuditCompliance/dashboard/
+http://www.agsiweb.ca:885/Angular2AuditCompliance/dashboard/

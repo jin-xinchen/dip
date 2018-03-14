@@ -1,0 +1,300 @@
+05-31
+npm view bootstrap dist-tags
+05-26
+What is the Angular2 equivalent to an AngularJS $watch?
+pie color
+2007-05-19
+Asset Layer:PoleMount Transform => Asset Sys ID:25344566
+-1003 2017-05-19 12:37:10.480-0400 ASSET_SYSID=217621910 doesn't exist in layer=Utility Poles
+
+dataDashboardFactory.recentScoresForAsset(AssetTemp.ASSET_SYSID,AssetTemp.ASSET_CONTROL_SYSID)
+                    .success(function(data) {
+                        if(angular.isArray(data)){
+2017-05-18
+Asset Layer:Utility Poles(Name) => Asset Sys ID:21762191
+
+2017-05-16
+npm uninstall --save-dev angular-cli
+
+npm install --save-dev @angular/cli@latest
+
+
+2017-05-15
+
+C:\Users\MilesZheng\agsi\auditcompliance\dashboardAC>npm install bootstrap@4.0.0-alpha.6
+dashboard-ac@0.0.0 
+C:\Users\MilesZheng\agsi\auditcompliance\dashboardAC
+
+`-- bootstrap@4.0.0-alpha.6
+  +-- jquery@3.2.1
+  `-- tether@1.4.0
+
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.0.0 
+(node_modules\chokidar\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.1.1: wanted {"os":"darwin","arch":"any"} 
+(current: {"os":"win32","arch":"x64"})
+
+2017-05
+npm install bootstrap@4.0.0-alpha.6
+
+ Updating to 4.0.0
+Updating to 4 is as easy as updating your Angular dependencies to the latest version, and double checking if you want animations. This will work for most use cases.
+
+On Linux/Mac: 
+npm install @angular/{common,compiler,compiler-cli,core,forms,http,platform-browser,platform-browser-dynamic,platform-server,router,animations}@latest typescript@latest --save 
+On Windows:
+npm install @angular/common@latest @angular/compiler@latest @angular/compiler-cli@latest @angular/core@latest @angular/forms@latest @angular/http@latest @angular/platform-browser@latest @angular/platform-browser-dynamic@latest @angular/platform-server@latest @angular/router@latest @angular/animations@latest typescript@latest --save
+Then run whatever ng serve or npm start command you normally use, and everything should work.
+If you rely on Animations, import the new BrowserAnimationsModule from @angular/platform-browser/animations in your root NgModule. Without this, your code will compile and run, but animations will trigger an error. Imports from @angular/core were deprecated, use imports from the new package import { trigger, state, style, transition, animate } from '@angular/animations';.
+We are beginning work on an interactive Angular Update Guide if you would like to see more information about making any needed changes to your application.
+2017.05.05
+proxy.conf.json
+{
+  "/servlet": {
+    "target": "http://192.168.10.116:8080/go360AuditandCompliance3",
+    "secure": false
+  }
+}
+
+{
+  "/api": {
+    "target": "http://192.168.10.116:8080/go360AuditandCompliance3",
+    "secure": false
+    ,
+    "pathRewrite": {"^/api" : ""}
+  }
+}
+
+
+[
+  {
+    context: ['/servlet/**','/api-v2/**'],
+    target: 'http://192.168.10.116:8080/go360AuditandCompliance3',
+    secure: false
+  }
+]
+2017.05.04
+
+commit -m "" C:/Users/MilesZheng/agsi/ACSVN/go360AuditComplianceAngular2_0/public_html/partials C:/Users/MilesZheng/agsi/ACSVN/go360AuditComplianceAngular2_0/public_html/js 
+    Sending C:/Users/MilesZheng/agsi/ACSVN/go360AuditComplianceAngular2_0/public_html/js/app.js 
+    Sending C:/Users/MilesZheng/agsi/ACSVN/go360AuditComplianceAngular2_0/public_html/js/components.js 
+    Sending C:/Users/MilesZheng/agsi/ACSVN/go360AuditComplianceAngular2_0/public_html/js/ctrl-AssetAuditReport.js 
+    Sending C:/Users/MilesZheng/agsi/ACSVN/go360AuditComplianceAngular2_0/public_html/js/ctrl-Audit.js 
+    Sending C:/Users/MilesZheng/agsi/ACSVN/go360AuditComplianceAngular2_0/public_html/js/ctrl-AuditFromCache.js 
+    Sending C:/Users/MilesZheng/agsi/ACSVN/go360AuditComplianceAngular2_0/public_html/js/ctrl-MainView.js 
+    Sending C:/Users/MilesZheng/agsi/ACSVN/go360AuditComplianceAngular2_0/public_html/js/ctrl-TermsConditions.js 
+    Sending C:/Users/MilesZheng/agsi/ACSVN/go360AuditComplianceAngular2_0/public_html/js/services.js 
+    Sending C:/Users/MilesZheng/agsi/ACSVN/go360AuditComplianceAngular2_0/public_html/partials/audit.html 
+    Sending C:/Users/MilesZheng/agsi/ACSVN/go360AuditComplianceAngular2_0/public_html/partials/auditReport.html 
+    Sending C:/Users/MilesZheng/agsi/ACSVN/go360AuditComplianceAngular2_0/public_html/partials/dir-dashRecentScoresForAsset.html 
+    Sending C:/Users/MilesZheng/agsi/ACSVN/go360AuditComplianceAngular2_0/public_html/partials/dir-navBar.html 
+    Sending C:/Users/MilesZheng/agsi/ACSVN/go360AuditComplianceAngular2_0/public_html/partials/dir_SearchWindow.html 
+    Transmitting file data ... 
+    Committed revision 1713. 
+Completed commit. 
+commit -m "" C:/Users/MilesZheng/agsi/ACSVN/go360AuditComplianceAngular2_0/public_html/css C:/Users/MilesZheng/agsi/ACSVN/go360AuditComplianceAngular2_0/public_html/data 
+    Sending C:/Users/MilesZheng/agsi/ACSVN/go360AuditComplianceAngular2_0/public_html/css/go360.css 
+    Sending C:/Users/MilesZheng/agsi/ACSVN/go360AuditComplianceAngular2_0/public_html/data/termsConditions_EN.json 
+    Sending C:/Users/MilesZheng/agsi/ACSVN/go360AuditComplianceAngular2_0/public_html/data/termsConditions_FR.json 
+    Transmitting file data ... 
+    Committed revision 1714. 
+Completed commit. 
+commit -m "" C:/Users/MilesZheng/agsi/ACSVN/go360AuditComplianceAngular2_0/public_html/js C:/Users/MilesZheng/agsi/ACSVN/go360AuditComplianceAngular2_0/public_html/partials 
+    Sending C:/Users/MilesZheng/agsi/ACSVN/go360AuditComplianceAngular2_0/public_html/js/components_dashboard.js 
+    Sending C:/Users/MilesZheng/agsi/ACSVN/go360AuditComplianceAngular2_0/public_html/js/dashboard/components_base.js 
+    Sending C:/Users/MilesZheng/agsi/ACSVN/go360AuditComplianceAngular2_0/public_html/partials/dir-dashAlerts.html 
+    Transmitting file data ... 
+    Committed revision 1715. 
+Completed commit. 
+
+
+
+2017.04.25
+copy wijmo inot node_modules
+
+ÓÃÓÚÌî³ä¾É°æ±¾µÄä¯ÀÀÆ÷
+C:\Users\MilesZheng\agsi\ACSVN\Go360AuditComplianceAdmin2\node_modules\core-js\client
+background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+MTYvaTAwMjdfY2xvc2UtZGlhbG9nPC90aXRsZT48ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz48cGF0aCBkPSJNOS42NCA4bDQuMDE2IDQuMDE2Yy4yMy4yMy4zNDQuNTAyLjM0NC44MiAwIC4zMTgtLjExNS41OS0uMzQ0LjgyLS4yMy4yMy0uNTAyLjM0NC0uODIuMzQ0LS4zMTggMC0uNTktLjExNS0uODItLjM0NEw4IDkuNjRsLTQuMDE2IDQuMDE2Yy0uMjMuMjMtLjUwMi4zNDQtLjgyLjM0NC0uMzE4IDAtLjU5LS4xMTUtLjgyLS4zNDQtLjIzLS4yMy0uMzQ0LS41MDItLjM0NC0uODIgMC0uMzE4LjExNS0uNTkuMzQ0LS44Mkw2LjM2IDggMi4zNzQgNC4wMTZjLS4yMy0uMjMtLjM0NC0uNTAzLS4zNDQtLjgyIDAtLjMxOC4xMTYtLjU4Ny4zNDUtLjgwNS4yMy0uMjMuNTAzLS4zNC44Mi0uMzQuMzE4IDAgLjU5LjExMy44Mi4zNDNMOCA2LjM3Nmw0LjAzLTQuMDNjLjIzLS4yMy41MDQtLjM0NS44MjItLjM0NS4zMTcgMCAuNTkuMTE3LjgyLjM0Ni4yMi4yMy4zMjguNTAyLjMyOC44MiAwIC4zMTgtLjExLjU4Ni0uMzI4LjgwNUw5LjY0MiA4eiIgZmlsbD0iI2ZmZiIgZmlsbC1ydWxlPSJldmVub2RkIi8+PC9zdmc+");
+2017.04.24
+2017.04.24
+in credentials.ts
+export var credentials = {
+  client_id: 1234,
+  client_secret: 'secret',
+  host: 'Angular2AuditCompliance'
+}
+
+import {credentials} from './credentials'
+public getAllTickets() {
+    var urlProxy = "/servlet/LoginBean?action=loginVerify&username=utility_demo&password=demo1234&MachineID=chrome%2058.0.3029.81&OSType=windows-7&APPName=GO360%20Audit%20Compliance%20Utility";
+    urlProxy="/"+credentials.host+urlProxy
+    this.http.get(urlProxy)
+    .map(res=> {
+       this.test=res.json();
+       this.logger.log(this.test);
+       return this.test;
+      })
+      .subscribe(
+                data => {
+                    console.log(">"+data.methodName +" : "+ data.sessionid);
+                    console.log(data);
+                },
+                error => {
+                    console.error(error);
+                }
+            );
+    //  {
+    //     method: 'GET',
+    //     headers: new Headers([
+    //         'Accept', 'application/json',
+    //         'Content-Type', 'application/json'
+    //     ])
+    // }
+    // );
+    }
+
+
+2017.04.24
+1.In proxy.conf.json in the folder same package.json.
+{
+  "/servlet": {
+    "target": "http://192.168.10.116:8080/go360AuditandCompliance3",
+    "secure": false
+  }
+}
+2. In package.json
+ "scripts": {
+ "startProxy":"ng serve --proxy-config proxy.conf.json -port 3200"
+  },
+
+>npm run startProxy
+
+3.In default-dash-widget.components.ts
+  RemoveDefault(){
+
+    this.logger.log("RemoveDefault");
+
+    var url="http://192.168.10.116:8080/go360AuditandCompliance3/servlet/LoginBean?action=loginVerify&username=utility_demo";
+
+    var urlsCORS='http://192.168.10.116:8080/Angular2AuditCompliance/servlet/LoginBean?action=loginVerify&username=utility_demo';
+
+
+    var urlProxy = "/servlet/LoginBean?action=loginVerify&username=utility_demo";
+
+    this.http.get(urlProxy).map((response) => {
+
+              var user = response.json();
+
+              console.log("user object>"+user.result);
+
+              // if(user && user.token){
+
+                localStorage.setItem("currentUser",JSON.stringify(user));
+
+              //   // this.subject.next(Object.assign({},user));
+
+              // }
+
+              // return response;
+
+              return user;
+
+            })
+
+            .subscribe(
+
+                data => {
+
+                    console.log("login success>"+data.methodName +" sessionId: "+ data.sessionid);
+
+                    console.log(data);
+
+                },
+
+                error => {
+
+                    console.error(error);
+
+                }
+            );
+
+    //  this.http.get(url).map(res=> {
+
+    //    this.test=res.json();
+
+    //    this.logger.log(this.test);
+
+    //   })
+
+  }
+
+2017.04.21
+
+http://www.adam-bien.com/roller/abien/entry/building_an_angular_2_application
+ CORS filter  https://github.com/AdamBien/cors
+package com.agsi.go360.util;
+
+import java.io.IOException;
+
+
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+//import javax.ws.rs.core;
+
+public class CorsResponseFilter implements Filter {
+
+    private FilterConfig _filterConfig = null;
+
+    public static final String ALLOWED_METHODS = "GET, POST, PUT, DELETE, OPTIONS, HEAD";
+    public final static int MAX_AGE = 42 * 60 * 60;
+    public final static String DEFAULT_ALLOWED_HEADERS = "origin,accept,content-type";
+
+    public void init(FilterConfig filterConfig) throws ServletException {
+        _filterConfig = filterConfig;
+    }
+
+    public void destroy() {
+        _filterConfig = null;
+    }
+
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException,
+                                                                                                     ServletException {
+        HttpServletRequest req = (HttpServletRequest) request;
+//        System.out.println("Request: " + request.getMethod());
+
+        HttpServletResponse resp = (HttpServletResponse) response;
+        resp.addHeader("Access-Control-Allow-Origin", "*");
+        resp.addHeader("Access-Control-Allow-Methods", "GET,POST");
+        resp.addHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
+        // Just ACCEPT and REPLY OK if OPTIONS
+        if (req.getMethod().equals("OPTIONS")) {
+            resp.setStatus(HttpServletResponse.SC_OK);
+            return;
+        }
+        chain.doFilter(req, response);
+    }
+}
+
+<filter>
+  <filter-name>CorsFilter</filter-name>
+  <filter-class>com.agsi.go360.util.CorsResponseFilter</filter-class>
+</filter>
+<filter-mapping>
+  <filter-name>CorsFilter</filter-name>
+  <url-pattern>/*</url-pattern>  // Only * URL Pattern error! while deploying into Glassfash, so should be /*
+</filter-mapping>
+
+
+http://angularjs.blogspot.ca/2017/03/angular-400-now-available.html
+ npm install @angular/common@latest @angular/compiler@latest @angular/compiler-cli@latest @angular/core@latest @angular/forms@latest @angular/http@latest @angular/platform-browser@latest @angular/platform-browser-dynamic@latest @angular/platform-server@latest @angular/router@latest @angular/animations@latest typescript@latest --save

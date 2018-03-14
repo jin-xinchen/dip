@@ -1,0 +1,8 @@
+{
+  "/api": {
+    "target": "http://192.168.10.116:8080/go360AuditandCompliance3",
+    "secure": false
+    ,
+    "pathRewrite": {"^/api" : ""}
+  }
+}
