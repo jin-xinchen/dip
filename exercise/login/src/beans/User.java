@@ -1,20 +1,36 @@
 package beans;
 
 public class User {
-    public User() {
-
+    public User(String name, String password) {
+        this.name = name;
+        this.password = password;
     }
-    
-    private String user;
+
+    private String name;
     private String password;
 
+    public boolean checkUserName() {
+        boolean result = false;
 
-    public void setUser(String user) {
-        this.user = user;
+        return result;
+    }
+    public boolean checkPassword() {
+        boolean result = false;
+
+        return result;
     }
 
-    public String getUser() {
-        return user;
+    @Override
+    public String toString() {
+        return "Name: " + this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public void setPassword(String password) {
@@ -26,7 +42,8 @@ public class User {
     }
 
     public static void main(String[] args) {
-        User user = new User();
+        User user = new User("userOne", "");
+        System.out.println(user);
     }
-    
+
 }

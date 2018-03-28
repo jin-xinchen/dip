@@ -2,6 +2,8 @@ package servlet;
 
 import beans.SqlCheck;
 
+import beans.User;
+
 import java.io.*;
 
 import java.util.*;
@@ -18,10 +20,9 @@ public class Check extends HttpServlet {
         String name = request.getParameter("name");
         String pass = request.getParameter("pass");
         SqlCheck sc = new SqlCheck();
-        sc.setName(name);
-        sc.setPass(pass);
+        User loginUser = new User(name,pass);
         try {
-            if (sc.checkAlreadyExist()) {
+            if (sc.checkAlreadyExist(loginUser)) {
                 out.print("ok"); //return a string that is 2 characters in length
                 request.getSession().setAttribute("name", name);
 

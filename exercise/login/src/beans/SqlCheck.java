@@ -12,31 +12,13 @@ import org.omg.CORBA.Request;
 
 public class SqlCheck {
     private boolean ok = false;
-    private String name = null;
-    private String pass = null;
 
-    public boolean checkAlreadyExist() throws Exception {
-        checkSQL(this.name, this.pass);
+    public boolean checkAlreadyExist(User user) throws Exception {
+        checkSQLforAlreadyExist(user.getName(), user.getPassword());
         return this.ok;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setPass(String pass) {
-        this.pass = pass;
-    }
-
-    public String getPass() {
-        return pass;
-    }
-
-    private void checkSQL(String name, String pass) throws Exception {
+    private void checkSQLforAlreadyExist(String name, String pass) throws Exception {
 //        Class.forName("com.mysql.jdbc.Driver");
 //        String url = "jdbc:mysql://localhost:3306/user?user=root&password=x?&characterEncoding=UTF-8";
 //        Connection con = DriverManager.getConnection(url);
