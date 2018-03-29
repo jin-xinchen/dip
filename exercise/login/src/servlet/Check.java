@@ -22,9 +22,12 @@ public class Check extends HttpServlet {
         SqlCheck sc = new SqlCheck();
         User loginUser = new User(name,pass);
         try {
-            if (sc.checkAlreadyExist(loginUser)) {
+            if (loginUser.verify() && sc.checkAlreadyExist(loginUser)) {
                 out.print("ok"); //return a string that is 2 characters in length
                 request.getSession().setAttribute("name", name);
+                request.getSession().setAttribute("loginUser", loginUser);
+//                RequestDispatcher rd=request.getRequestDispatcher("dashboardIndex");  
+//                rd.forward(request, response);  
 
             } else {
                 out.print("e"); //return a string that is 1 characters in length

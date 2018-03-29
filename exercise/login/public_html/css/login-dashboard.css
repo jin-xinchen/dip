@@ -1,0 +1,10 @@
+        .text {  
+            width:180px;  
+            height:21px;  
+        }  
+        .userRed {  
+            border: 1px solid red;  
+            width:180px;  
+            height:21px;  
+        } 
+        .message{color:red;}

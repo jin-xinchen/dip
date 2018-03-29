@@ -5,7 +5,7 @@
     var errorMessage = document.getElementById('divErrorMessage');
     btnLogin.onclick = function(){  
         var isValidate=false;  
-        if (!user.value.match(/^\S{3,20}$/)) {  
+        if (!user.value.match(/^[a-zA-Z0-9]{3,20}$/)) {  
             user.className = 'userRed';//placeholder
             errorMessage.innerHTML="The username must be Alphanumeric, at least 3 characters in length";
             user.focus();  
@@ -41,7 +41,8 @@
                
                 if (login==="ok") {  
                     errorMessage1.innerHTML = '<font color="green">Login...</font>';  
-                    location = 'welcome';   
+                    //location = 'dashboardIndex';   
+                    document.getElementById('mainAera').innerHTML=document.getElementById('user').value+"<br/> Welcome to Dashboard";
                 } else {  
                     errorMessage1.innerHTML = '<font color="red">Try again, please!</font>';  
                 }  
