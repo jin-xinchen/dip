@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Theme Simply Me</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <style>
+    .bg-1 {
+      background-color: #1abc9c; /* Green */
+      color: #ffffff;
+    }
+
+    /*05 Add more content and put it inside new containers:*/
+    .bg-2 {
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+    }
+    .bg-3 {
+      background-color: #ffffff; /* White */
+      color: #555555;
+    }
+    /*06 Add Padding Lets make the containers look good by adding some padding:*/
+    .container-fluid {   padding-top: 70px;  padding-bottom: 70px; }
+
+    /*08*/
+    @font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+    url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+    url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid bg-1 text-center">    <!--02 Add Bootstrap CDN and Put Elements in Container-->
+      <!--03 
+        1. Add a custom class (.bg-1) to the container to add a background color.
+        2. Add the .text-center class to center the text inside the container:
+      -->
+    <h3>Who Am I?</h3>
+    <img src="bird.jpg" class="img-circle" alt="Bird"><!--04 Shape the image to a circle with the .img-circle class-->
+    <h3>I'm an adventurer</h3>
+    </div>
+
+    <!-- /*05 Add more content and put it inside new containers:*/ -->
+    <div class="container-fluid bg-2 text-center">
+        <h3>What Am I?</h3>
+        <p>Lorem ipsum..</p>
+     <!--07 Add a Button Add a button to the mid container:  
+        <a href="#" class="btn btn-default btn-lg">Search</a>
+      -->
+     <!--08 Add an Icon Add a Search icon on the "Search" button: --> 
+     <a href="#" class="btn btn-default btn-lg">
+        <span class="glyphicon glyphicon-search"></span> Search  
+        <!--08 Add an Icon 
+          https://google.github.io/material-design-icons/#icon-font-for-the-web 
+        https://github.com/google/material-design-icons
+        -->
+        <i class="material-icons">face</i> 
+        <i class="material-icons">search</i>
+      </a>        
+    </div>
+      
+    <div class="container-fluid bg-3 text-center">
+        <h3>Where To Find Me?</h3>
+        <p>Lorem ipsum..</p>
+    </div>
+
+
+</body>
+</html>

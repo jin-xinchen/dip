@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Theme Simply Me</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+    .bg-1 {
+      background-color: #1abc9c; /* Green */
+      color: #ffffff;
+    }
+
+    /*05 Add more content and put it inside new containers:*/
+    .bg-2 {
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+    }
+    .bg-3 {
+      background-color: #ffffff; /* White */
+      color: #555555;
+    }
+    /*06 Add Padding Lets make the containers look good by adding some padding:*/
+    .container-fluid {   padding-top: 70px;  padding-bottom: 70px; }
+
+    /*11 Style The Navbar
+         Use CSS to customize the navigation bar:*/
+.navbar {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+  font-size: 12px;
+  letter-spacing: 5px;
+}
+
+.navbar-nav li a:hover {
+  color: #1abc9c !important;
+}
+    </style>
+<!--/* 13
+Final Touch
+
+Personalize your Theme by adding a font that you like. We have used "Montserrat" from Google's Font Library.
+
+Link to the font in the <head> section:
+*/-->
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<style>
+body {
+  font: 20px "Montserrat", sans-serif;
+  line-height: 1.8;
+  color: #f5f6f7;
+}
+
+p {font-size: 16px;}
+</style>
+
+</head>
+<body>
+  <!--
+  11  Add a Navbar
+  Add a standard navigation bar at the top of the page with and make it collapsible on smaller screens:
+  -->
+    <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Me</a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#">WHO</a></li>
+              <li><a href="#">WHAT</a></li>
+              <li><a href="#">WHERE</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav> 
+    <div class="container-fluid bg-1 text-center">    <!--02 Add Bootstrap CDN and Put Elements in Container-->
+      <!--03 
+        1. Add a custom class (.bg-1) to the container to add a background color.
+        2. Add the .text-center class to center the text inside the container:
+      -->
+    <h3>Who Am I?</h3>
+    <!--04 Shape the image to a circle with the .img-circle class-->
+    <img src="bird.jpg" class="img-circle" alt="Bird">
+<br/>
+    <!--10 Add the .img-responsive class to all images.
+      Add display:inline to the first image to force it to be centered
+    -->
+    <img src="bird.jpg" class="img-responsive img-circle" style="display:inline" alt="Bird">
+<br/>
+<!--
+  10 Add the .img-responsive class adds display:block to the image, which makes it jump to the left of the screen.
+-->
+    <img src="bird.jpg" class="img-responsive img-circle" style="display:block" alt="Bird">
+<!--13 We have also created a "helper" margin class to add extra space where we think it's needed; usually after each <h3> and <img> element.-->
+  <style> .margin {margin-bottom: 45px;}</style>  
+  <img src="bird.jpg" class="img-responsive img-circle margin" style="display:inline" alt="Bird">
+
+    <h3>I'm an adventurer</h3>
+    </div>
+
+    <!-- /*05 Add more content and put it inside new containers:*/ -->
+    <div class="container-fluid bg-2 text-center">
+        <h3>What Am I?</h3>
+        <p>Lorem ipsum..</p>
+     <!--07 Add a Button Add a button to the mid container:  
+        <a href="#" class="btn btn-default btn-lg">Search</a>
+      -->
+     <!--08 Add an Icon Add a Search icon on the "Search" button: --> 
+     <a href="#" class="btn btn-default btn-lg">
+        <span class="glyphicon glyphicon-search"></span> Search
+      </a>        
+    </div>
+    <!--09 Add three columns of equal width inside the third container (.col-sm-4):-->  
+    <div class="container-fluid bg-3 text-center">
+        <h3>Where To Find Me?</h3>
+        <div class="row">
+            <div class="col-sm-4">
+              <p>Lorem ipsum..</p>
+              <img src="bird.jpg" class="img-responsive" style="width:100%" alt="Image">
+            </div>
+            <div class="col-sm-4">
+              <p>Lorem ipsum..</p>
+              <img src="bird.jpg" class="img-responsive" style="width:100%" alt="Image">
+            </div>
+            <div class="col-sm-4">
+              <p>Lorem ipsum..</p>
+              <img src="bird.jpg" class="img-responsive" style="width:100%" alt="Image">
+            </div>
+          </div>
+<!-- 10 Add the .img-responsive class to all images.
+If you want the image to span the entire width of the screen when it starts to stack, add width:100% to the image.
+-->
+    </div>
+<!--12 Add a Footer
+Add a footer and use CSS to style it:-->
+<style>
+    .bg-4 {
+      background-color: #2f2f2f;
+      color: #ffffff;
+    }
+    </style>
+    
+    <footer class="container-fluid bg-4 text-center">
+      <p>Bootstrap Theme Made By <a href="https://www.w3schools.com">www.w3schools.com</a></p>
+    </footer> 
+</body>
+</html>

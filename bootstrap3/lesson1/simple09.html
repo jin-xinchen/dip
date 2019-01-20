@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Theme Simply Me</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+    .bg-1 {
+      background-color: #1abc9c; /* Green */
+      color: #ffffff;
+    }
+
+    /*05 Add more content and put it inside new containers:*/
+    .bg-2 {
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+    }
+    .bg-3 {
+      background-color: #ffffff; /* White */
+      color: #555555;
+    }
+    /*06 Add Padding Lets make the containers look good by adding some padding:*/
+    .container-fluid {   padding-top: 70px;  padding-bottom: 70px; }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid bg-1 text-center">    <!--02 Add Bootstrap CDN and Put Elements in Container-->
+      <!--03 
+        1. Add a custom class (.bg-1) to the container to add a background color.
+        2. Add the .text-center class to center the text inside the container:
+      -->
+    <h3>Who Am I?</h3>
+    <img src="bird.jpg" class="img-circle" alt="Bird"><!--04 Shape the image to a circle with the .img-circle class-->
+    <h3>I'm an adventurer</h3>
+    </div>
+
+    <!-- /*05 Add more content and put it inside new containers:*/ -->
+    <div class="container-fluid bg-2 text-center">
+        <h3>What Am I?</h3>
+        <p>Lorem ipsum..</p>
+     <!--07 Add a Button Add a button to the mid container:  
+        <a href="#" class="btn btn-default btn-lg">Search</a>
+      -->
+     <!--08 Add an Icon Add a Search icon on the "Search" button: --> 
+     <a href="#" class="btn btn-default btn-lg">
+        <span class="glyphicon glyphicon-search"></span> Search
+      </a>        
+    </div>
+    <!--09 Add three columns of equal width inside the third container (.col-sm-4):-->  
+    <div class="container-fluid bg-3 text-center">
+        <h3>Where To Find Me?</h3>
+        <div class="row">
+            <div class="col-sm-4">
+              <p>Lorem ipsum..</p>
+              <img src="bird.jpg" alt="Image">
+            </div>
+            <div class="col-sm-4">
+              <p>Lorem ipsum..</p>
+              <img src="bird.jpg" alt="Image">
+            </div>
+            <div class="col-sm-4">
+              <p>Lorem ipsum..</p>
+              <img src="bird.jpg" alt="Image">
+            </div>
+          </div>
+    </div>
+
+
+</body>
+</html>
