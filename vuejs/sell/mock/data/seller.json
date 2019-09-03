@@ -1,0 +1,39 @@
+{"data":{
+    "name":"天天商店food001",
+    "desc":"捷报专送",
+    "deliveryTime":38,
+    "score":4.2,
+    "serviceScore":4.1,
+    "foodScore":4.3,
+    "rankRate":69.2,
+    "minPrice":16,
+    "deliverPrice":4,
+    "ratingCount":24,
+    "sellCount":90,
+    "bulletin":"great food, There is a good tale.  I’ve been playing around with icomoon.io and it’s *excellent* — thank you so much for putting it together.",
+    "supports":[
+      {
+        "type":0,
+        "desc":"在线支付满28减5"
+      },
+      {
+        "type":2,
+        "desc":"VC 80%"
+      },
+      {
+        "type":3,
+        "desc":"receiption"
+      },
+      {
+        "type":4,
+        "desc":"deliever"
+      }
+    ],
+    "avatar":"https://lh3.googleusercontent.com/-_OBigdWZMP8/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rc2QI51j3NdHotDlZjQX03xooD6eg.CMID/s192-c/photo.jpg",
+    "pics":["http://adf.com/s.jpg"],
+    "infos":[
+      "cate","addressdaf","work time:10AM-11PM"
+    ]
+  },
+  "error":0
+  }

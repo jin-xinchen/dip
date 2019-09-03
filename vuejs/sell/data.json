@@ -1,0 +1,104 @@
+{
+  "seller":{
+    "name":"food001",
+    "desc":"kite",
+    "deliveryTime":38,
+    "score":4.2,
+    "serviceScore":4.1,
+    "foodScore":4.3,
+    "rankRate":69.2,
+    "minPrice":16,
+    "deliverPrice":4,
+    "ratingCount":24,
+    "sellCount":90,
+    "bulletin":"great food",
+    "supports":[
+      {
+        "type":0,
+        "desc":"buy one free one "
+      },
+      {
+        "type":2,
+        "desc":"VC 80%"
+      },
+      {
+        "type":3,
+        "desc":"receiption"
+      },
+      {
+        "type":4,
+        "desc":"deliever"
+      }
+    ],
+    "avatar":"https://static.img/avatar.jpg",
+    "pics":["http://adf.com/s.jpg"],
+    "infos":[
+      "cate","addressdaf","work time:10AM-11PM"
+    ]
+  },
+  "goods":[
+    {
+      "name":"hot sale",
+      "type":-1,
+      "foods":[]
+    },
+    {
+      "name":"sign sale",
+      "type":2,
+      "foods":[
+        {
+          "name":"dinner",
+           "price":29,
+           "oldPrice":38,
+           "desc":"good good",
+           "sellCount":17,
+           "rating":100,
+           "info":"",
+           "ratings":[
+             {
+               "username":"Jack",
+               "rateTime":14564565465,
+               "rateType":0,
+               "text":"I LIKE IT",
+               "avatar":"http://dga/a.png"
+             },
+             {
+               "username":"Fan",
+               "rateTime":1456454565465,
+               "rateType":0,
+               "text":"",
+               "avatar":"http://dga/a.png"
+             }
+           ]
+           ,"icon":"https://img.com/iconsaf4525",
+           "image":"https://img.com/adff"
+
+        }
+
+      ]
+    }
+  ],
+  "rating":[
+    {
+      "username":"Marks",
+      "rateTime":124323545,
+      "deliveryTime":"",
+      "score":4,
+      "rateType":0,
+      "text":"xxx",
+      "avatar":"xxx.png",
+      "recommend":["cafag"]
+    },
+    {
+      "username":"Wang Hong",
+      "rateTime":124323545454784567,
+      "deliveryTime":"",
+      "score":4,
+      "rateType":0,
+      "text":"xxx",
+      "avatar":"xxx.png",
+      "recommend":["foods","noodle"]
+    }
+  ]
+
+}
