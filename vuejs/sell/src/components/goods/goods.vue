@@ -1,6 +1,7 @@
 <template>
   <div class="goods">
-    <div class="menu-wrapper">
+    <div class="menu-wrapper" ref="menu-wrapper">
+    <!-- v-el:menu-wrapper 中画线dash https://cn.vuejs.org/v2/guide/migration.html#v-el-%E5%92%8Cv-ref-%E6%9B%BF%E6%8D%A2-->
       <ul>
         <li v-for="item in goods" :key="item.index" class="menu-item">
           <span class="text border-1px">
@@ -9,7 +10,7 @@
         </li>
       </ul>
     </div>
-    <div class="foods-wrapper">
+    <div class="foods-wrapper" ref="foods-wrapper">
       <ul>
         <li v-for="item in goods" :key="item.index" class="food-list">
           <h1 class="title">{{item.name}}</h1>
@@ -39,6 +40,8 @@
 </template>
 
 <script type="text/ecmascript-6">
+  import BScroll from 'better-scroll';
+
   const ERR_OK = 0;
   export default {
     props: {
@@ -59,10 +62,24 @@
         // console.log('===========================');
         // console.log(response);
         if (response.error === ERR_OK) {
-          this.goods = response.data;
-          // console.log(this.goods);
+          this.goods = response.data; // need nextTick
+          // this.$nextTick(() => {
+            this._initScroll();
+          // });
+
+          // conso  le.log(this.goods);
         }
       });
+    },
+    methods: {
+      _initScroll() {
+        // this.menuScroll = new BScroll(this.$refs.menuwrapper, {});
+        // this.foodsScroll = new BScroll(this.$refs.foodswrapper, {});
+        let wrapper = document.querySelector('.menu-wrapper');
+        this.menuScroll = new BScroll(wrapper);
+        let foodsWrapper = document.querySelector(('.foods-wrapper'));
+        this.foodsScroll = new BScroll(foodsWrapper);
+      }
     }
   };
 </script>
