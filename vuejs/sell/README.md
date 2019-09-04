@@ -1,7 +1,7 @@
 # sell
 
 > sell app 20190825
- This codes is for learn VUEjs.  Thanks 尤雨溪（Evan You）.
+ This is for learning VUEjs.  Thanks 尤雨溪（Evan You） and others working on VUEjs.
 
 ## Build Setup
 
@@ -21,3 +21,5 @@ npm run build --report
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
+## Note
+const apiMocker = require('webpack-api-mocker')

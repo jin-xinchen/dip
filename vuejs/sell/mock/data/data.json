@@ -1,103 +1,162 @@
 {
-  "seller":{
-    "name":"food001",
-    "desc":"kite",
-    "deliveryTime":38,
-    "score":4.2,
-    "serviceScore":4.1,
-    "foodScore":4.3,
-    "rankRate":69.2,
-    "minPrice":16,
-    "deliverPrice":4,
-    "ratingCount":24,
-    "sellCount":90,
-    "bulletin":"great food",
-    "supports":[
-      {
-        "type":0,
-        "desc":"buy one free one "
+  "seller": {
+    "name": "food001",
+    "desc": "kite",
+    "deliveryTime": 38,
+    "score": 4.2,
+    "serviceScore": 4.1,
+    "foodScore": 4.3,
+    "rankRate": 69.2,
+    "minPrice": 16,
+    "deliverPrice": 4,
+    "ratingCount": 24,
+    "sellCount": 90,
+    "bulletin": "great food",
+    "supports": [{
+        "type": 0,
+        "desc": "buy one free one "
       },
       {
-        "type":2,
-        "desc":"VC 80%"
+        "type": 2,
+        "desc": "VC 80%"
       },
       {
-        "type":3,
-        "desc":"receiption"
+        "type": 3,
+        "desc": "receiption"
       },
       {
-        "type":4,
-        "desc":"deliever"
+        "type": 4,
+        "desc": "deliever"
       }
     ],
-    "avatar":"https://static.img/avatar.jpg",
-    "pics":["http://adf.com/s.jpg"],
-    "infos":[
-      "cate","addressdaf","work time:10AM-11PM"
+    "avatar": "https://static.img/avatar.jpg",
+    "pics": ["http://adf.com/s.jpg"],
+    "infos": [
+      "cate", "addressdaf", "work time:10AM-11PM"
     ]
   },
-  "goods":[
-    {
-      "name":"hot sale",
-      "type":-1,
-      "foods":[]
-    },
-    {
-      "name":"sign sale",
-      "type":2,
-      "foods":[
-        {
-          "name":"dinner",
-           "price":29,
-           "oldPrice":38,
-           "desc":"good good",
-           "sellCount":17,
-           "rating":100,
-           "info":"",
-           "ratings":[
-             {
-               "username":"Jack",
-               "rateTime":14564565465,
-               "rateType":0,
-               "text":"I LIKE IT",
-               "avatar":"http://dga/a.png"
-             },
-             {
-               "username":"Fan",
-               "rateTime":1456454565465,
-               "rateType":0,
-               "text":"",
-               "avatar":"http://dga/a.png"
-             }
-           ]
-           ,"icon":"https://img.com/iconsaf4525",
-           "image":"https://img.com/adff"
+  "goods": [{
+      "name": "hot sale",
+      "type": -1,
+      "foods": [{
+          "name": "皮蛋粥",
+          "price": 29,
+          "oldPrice": 38,
+          "desc": "good good",
+          "sellCount": 17,
+          "rating": 100,
+          "info": "如送你音樂 想優美如藍天 如我要寫情歌 想窩心似新詩 尋找抑揚頓挫 尋找千言萬語太多 越渴望自然, 越稀罕真摯 由我說我的故事 就算用一千首情歌 還未夠用誠實愛過 在最後得一種承諾 I love you in the key of me 不喜歡說謊 願二人像孩子 看美麗何其多 想真的過一天 不必抑揚頓挫 不必千言萬語太多  越渴望自然 越稀罕真摯 由我說我的故事 就算用一千首情歌 還未夠用誠實愛過 在最後得一種承諾 I love you in the key of, in the key of In the key of, in the key of me Love me 就算用一千首情歌 還未夠用誠實愛過 盛世內簡單接受我 難得如荒原有音樂 就算用一千首情歌 還未夠真感覺更多 在最後得一種承諾 I love you in the key of me Love you in the key of me ",
+          "ratings": [{
+              "username": "Jack",
+              "rateTime": 14564565465,
+              "rateType": 0,
+              "text": "I LIKE IT",
+              "avatar": "http://dga/a.png"
+            },
+            {
+              "username": "Fan",
+              "rateTime": 1456454565465,
+              "rateType": 0,
+              "text": "",
+              "avatar": "http://dga/a.png"
+            }
+          ],
+          "icon": "https://img.com/iconsaf4525",
+          "image": "https://img.com/adff"
 
         }
 
       ]
-    }
-  ],
-  "rating":[
-    {
-      "username":"Marks",
-      "rateTime":124323545,
-      "deliveryTime":"",
-      "score":4,
-      "rateType":0,
-      "text":"xxx",
-      "avatar":"xxx.png",
-      "recommend":["cafag"]
     },
     {
-      "username":"Wang Hong",
-      "rateTime":124323545454784567,
-      "deliveryTime":"",
-      "score":4,
-      "rateType":0,
-      "text":"xxx",
-      "avatar":"xxx.png",
-      "recommend":["foods","noodle"]
+      "name": "sign sale",
+      "type": 2,
+      "foods": [{
+          "name": "dinner",
+          "price": 29,
+          "oldPrice": 38,
+          "desc": "good good",
+          "sellCount": 17,
+          "rating": 100,
+          "info": "",
+          "ratings": [{
+              "username": "Jack",
+              "rateTime": 14564565465,
+              "rateType": 0,
+              "text": "I LIKE IT",
+              "avatar": "http://dga/a.png"
+            },
+            {
+              "username": "Fan",
+              "rateTime": 1456454565465,
+              "rateType": 0,
+              "text": "",
+              "avatar": "http://dga/a.png"
+            }
+          ],
+          "icon": "https://img.com/iconsaf4525",
+          "image": "https://img.com/adff"
+
+        }
+
+      ]
+    },
+    {
+      "name": "老虎",
+      "type": 1,
+      "foods": []
+    }
+    ,
+    {
+      "name": "兔子",
+      "type": 3,
+      "foods": [{
+          "name": "王子",
+          "price": 29,
+          "oldPrice": 38,
+          "desc": "tale 王子 公主",
+          "sellCount": 217,
+          "rating": 100,
+          "info": "美丽的传说",
+          "ratings": [{
+              "username": "Jack",
+              "rateTime": 14564565465,
+              "rateType": 0,
+              "text": "I LIKE IT",
+              "avatar": "http://dga/a.png"
+            },
+            {
+              "username": "Fan",
+              "rateTime": 1456454565465,
+              "rateType": 0,
+              "text": "",
+              "avatar": "http://dga/a.png"
+            }
+          ],
+          "icon": "https://img.com/iconsaf4525",
+          "image": "https://img.com/adff"
+        }]
+    }
+  ],
+  "rating": [{
+      "username": "Marks",
+      "rateTime": 124323545,
+      "deliveryTime": "",
+      "score": 4,
+      "rateType": 0,
+      "text": "xxx",
+      "avatar": "xxx.png",
+      "recommend": ["cafag"]
+    },
+    {
+      "username": "Wang Hong",
+      "rateTime": 124323545454784567,
+      "deliveryTime": "",
+      "score": 4,
+      "rateType": 0,
+      "text": "xxx",
+      "avatar": "xxx.png",
+      "recommend": ["foods", "noodle"]
     }
   ]
 

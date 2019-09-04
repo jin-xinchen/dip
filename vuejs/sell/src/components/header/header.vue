@@ -224,7 +224,7 @@
      height: 100%
      overflow: auto
      background: rgba(7, 17, 27, 0.8)
-     backdrop-filter: blur(10px) //背景模糊 只iso支持
+     backdrop-filter: blur(2.2px) //背景模糊 只iso支持
      &.fade-enter-active, &.fade-leave-active
        transition: opacity .5s
      &.fade-enter, &.fade-leave-to /* .fade-leave-active below version 2.1.8 */
