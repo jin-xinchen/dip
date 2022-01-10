@@ -17,6 +17,16 @@ import java.io.FileInputStream;
  * http s : / / blog.csdn.net/u011541946/article/details/75269332
  */
 public class DDT2 {
+    @Test
+    public void test1(){
+        System.out.println(getClass().getName());
+    }
+    @Test
+    public void test2() throws Exception{
+        System.out.println(getClass().getName());
+        throw new Exception();
+
+    }
     @Test(dataProvider="testdata")
     public void TestLogin(String username,String password) throws InterruptedException{
 //        System.setProperty("webdriver.chrome.driver",".\\Tools\\chromedriver.exe");

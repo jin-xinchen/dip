@@ -1,12 +1,16 @@
 package com.jin;
 
 
+import org.checkerframework.checker.units.qual.Current;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 /**
  * https://www.cxyzjd.com/article/qq_30044187/52851555
@@ -23,11 +27,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  */
 public class OneByFireFox {
     public static void main(String[] args) {
+        FirefoxOptions opt = new FirefoxOptions();
+        opt.addArguments("disable-infobars");
+        opt.setHeadless(true);  // do not show on the browser, let it run in back end.
         // 如果你的 FireFox 没有安装在默认目录，那么必须在程序中设置
 //        C:\Program Files\Google\Chrome\Application\chrome.exe
         //System.setProperty("webdriver.firefox.bin", "C:\\Program Files\\Mozilla Firefox\\firefox.exe");
         // 创建一个 FireFox 的浏览器实例
-        WebDriver driver = new FirefoxDriver();
+        WebDriver driver = new FirefoxDriver(opt);
+
 //
 //    // 让浏览器访问 Baidu
 //    driver.get("http://www.baidu.com");
@@ -63,7 +71,11 @@ public class OneByFireFox {
         System.out.println("1 Page title is: " + driver.getTitle());
         WebElement element = driver.findElement(By.cssSelector(".text"));
         element.sendKeys("zTree");
-        WebElement button = driver.findElement(By.cssSelector(".button"));
+        WebElement button = driver.findElement(By.xpath("/html/body/div/div[2]/div[2]/div/form/input[2]"));
+        WebElement screenClose = driver.findElement(By.xpath("//*[@id=\"app\"]/div[5]/div[2]/img"));
+        if(screenClose.isEnabled()){
+            screenClose.click();
+        }
         button.click();
 ////Wait for the alert to be displayed and store it in a variable
 //        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
@@ -72,15 +84,16 @@ public class OneByFireFox {
 ////Press the OK button
 //        alert.accept();
 
-        (new WebDriverWait(driver, 10)).until(new ExpectedCondition<Boolean>() {
+        (new WebDriverWait(driver, Duration.ofSeconds(10))).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
                 return d.getTitle().toLowerCase().endsWith("darwynn");
             }
         });
+
         // 显示搜索结果页面的 title
         System.out.println("2 Page title is: " + driver.getTitle());
         System.out.println("CurrentUrl: "+driver.getCurrentUrl());
         //关闭浏览器
-        driver.quit();
+        //driver.quit();
     }
 }
