@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: securityjwt
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/cheetah?characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: 123456
+
+server:
+  port: 8080
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.itcheetah.securityjwt.entity
+  configuration:
+    map-underscore-to-camel-case: true
+
+rsa:
+  key:
+    pubKeyFile: C:\Users\Desktop\jwt\id_key_rsa.pub
+    priKeyFile: C:\Users\Desktop\jwt\id_key_rsa
+
+
+
+

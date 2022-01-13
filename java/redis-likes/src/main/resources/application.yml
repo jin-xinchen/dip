@@ -1,0 +1,28 @@
+server:
+  port: 8181
+
+spring:
+  profiles:
+    active: dev
+
+# MyBatis配置
+mybatis-plus:
+  mapper-locations: classpath:mapper/**/*Mapper.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  type-aliases-package: com.itzyq.redislikes.model
+
+
+# 日志配置
+logging:
+  level:
+    com.itzyq.redislikes: debug
+    org.springframework: warn
+#  config: classpath:logback.xml
+
+
+# PageHelper分页插件
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
