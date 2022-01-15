@@ -19,6 +19,13 @@
             <artifactId>selenium-java</artifactId>
             <version>4.0.0</version>
         </dependency>
+        <!--此dependency需要发在selenium-java后面，如现在的样子，否则org.openqa.selenium.remote.DesiredCapabilities会失效。 -->
+        <!-- 截图插件 -->
+        <dependency>
+            <groupId>ru.yandex.qatools.ashot</groupId>
+            <artifactId>ashot</artifactId>
+            <version>1.5.4</version>
+        </dependency>
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
@@ -52,6 +59,12 @@
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>4.5.10</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>

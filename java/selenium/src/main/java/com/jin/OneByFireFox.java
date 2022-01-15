@@ -69,6 +69,8 @@ public class OneByFireFox {
 //    });
         driver.get("http://www.darwynn.com");
         System.out.println("1 Page title is: " + driver.getTitle());
+        System.out.println("user.dir : "+System.getProperty("user.dir"));
+
         WebElement element = driver.findElement(By.cssSelector(".text"));
         element.sendKeys("zTree");
         WebElement button = driver.findElement(By.xpath("/html/body/div/div[2]/div[2]/div/form/input[2]"));
@@ -77,6 +79,7 @@ public class OneByFireFox {
             screenClose.click();
         }
         button.click();
+        driver.getPageSource().contains("darwynn");
 ////Wait for the alert to be displayed and store it in a variable
 //        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
 ////Store the alert text in a variable
@@ -94,6 +97,7 @@ public class OneByFireFox {
         System.out.println("2 Page title is: " + driver.getTitle());
         System.out.println("CurrentUrl: "+driver.getCurrentUrl());
         //关闭浏览器
-        //driver.quit();
+        driver.close();
+        driver.quit();
     }
 }
