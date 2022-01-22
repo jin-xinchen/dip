@@ -22,4 +22,6 @@ public interface Browser {
     void logScreenshotLong() throws IOException;
 
     void logScreenshot() throws IOException, InterruptedException;
+
+    boolean getDisplay(String xpath);
 }

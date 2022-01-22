@@ -4,6 +4,7 @@ import com.jin.factory.Browser;
 import com.jin.factory.SeleniumBrowser;
 import org.jdom2.Element;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -65,24 +66,35 @@ public class Homepage {
         driver.manage().window().maximize();
         (new WebDriverWait(driver, Duration.ofSeconds(10))).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
-                List<WebElement> ListE = null;
-                ListE = d.findElements(By.xpath("//*[@id=\"app\"]/div[5]/div[3]/ul/li[20]/div[1]/a/img"));
-                int n = ListE.size();
-                return d.getPageSource().contains(key);
+                try {
+                    List<WebElement> ListE = null;
+//                ListE = d.findElements(By.xpath("//*[@id=\"app\"]/div[5]/div[3]/ul/li[20]/div[1]/a/img"));
+//   //*[@id="app"]/div[5]/div[3]/ul
+                    WebElement goodsList = d.findElement(By.className("sld_goods_list"));
+                    return  goodsList.isEnabled();
+                }catch (Exception e){
+                    return false;
+                }
+//                return d.getPageSource().contains(key);
             }
         });
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+//        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 //           Thread.sleep(4000);
 //        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ID")));
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"app\"]/div[5]/div[3]/ul")));
-//      //*[@id="app"]/div[5]/div[3]/ul/li[1]/div[1]/a/img
-        //*[@id="app"]/div[5]/div[3]/ul/li[5]/div[1]/a/img
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
+//        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"app\"]/div[5]/div[3]/ul")));
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        (new WebDriverWait(driver, Duration.ofSeconds(10))).until(new ExpectedCondition<Boolean>() {
+            public Boolean apply(WebDriver d) {
+              return browser.getDisplay("//*[@id=\"app\"]/div[5]/div[3]/ul/li[1]/div[1]/a/img");
+            }
+        });
 //        browser.screenshot("target/1.png");
         browser.logScreenshot();
 //        browser.screenshotLong("target/1long.png");
         browser.logScreenshotLong();
+
+    }
+    public void quitDriver(){
         driver.quit();
     }
 

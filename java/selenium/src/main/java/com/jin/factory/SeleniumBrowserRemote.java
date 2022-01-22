@@ -124,5 +124,19 @@ public class SeleniumBrowserRemote implements Browser {
         Path tmpPath = com.jin.tool.fileToolForWindow.getScreenshotPath();
         this.screenshot(tmpPath);
     }
+    @Override
+    public boolean getDisplay(String xpath){
+        ////*[@id="app"]/div[5]/div[3]/ul/li[1]/div[1]/a/img
+        WebElement image = driver.findElement(By.xpath(xpath));
+        Boolean imageLoaded1 = (Boolean) ((JavascriptExecutor)driver)
+                .executeScript(
+                        "return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0"
+                        , image);
+        if (!imageLoaded1)
+        {
+            return false;
+        }
+        return true;
+    }
 
 }

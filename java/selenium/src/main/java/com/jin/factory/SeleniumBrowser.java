@@ -104,23 +104,6 @@ public class SeleniumBrowser implements Browser{
         }
 
     }
-    public void demo01(){
-        WebDriver driver;
-//        System.setProperty("webdriver.chrome.driver", ".\\Driver\\chromedriver.exe");
-        driver=new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().window().maximize();
-        driver.get("https://www.cjavapy.com/article/411/");
-//take screenshot of the entire page
-        Screenshot screenshot=new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
-        try {
-            Path tmpPath = com.jin.tool.fileToolForWindow.getScreenshotPath();
-            ImageIO.write(screenshot.getImage(),"PNG",new File(tmpPath.toString()));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        driver.quit();
-    }
     @Override
     public void logScreenshotLong() throws IOException {
 //        WebDriver driver;
@@ -143,6 +126,20 @@ public class SeleniumBrowser implements Browser{
     public void logScreenshot() throws IOException, InterruptedException {
         Path tmpPath = com.jin.tool.fileToolForWindow.getScreenshotPath();
         this.screenshot(tmpPath);
+    }
+    @Override
+    public boolean getDisplay(String xpath){
+        ////*[@id="app"]/div[5]/div[3]/ul/li[1]/div[1]/a/img
+        WebElement image = driver.findElement(By.xpath(xpath));
+        Boolean imageLoaded1 = (Boolean) ((JavascriptExecutor)driver)
+                .executeScript(
+                        "return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0"
+                        , image);
+        if (!imageLoaded1)
+        {
+            return false;
+        }
+        return true;
     }
 }
 /**

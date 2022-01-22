@@ -16,6 +16,8 @@ public class homepageTest extends TestCase {
             Assert.fail(e.getMessage());
         } catch (InterruptedException e) {
             Assert.fail(e.getMessage());
+        }finally {
+            hp.quitDriver();
         }
     }
 
