@@ -24,4 +24,6 @@ public interface Browser {
     void logScreenshot() throws IOException, InterruptedException;
 
     boolean getDisplay(String xpath);
+
+    void clickElement(String xpath) throws Exception;
 }

@@ -18,7 +18,7 @@ import java.util.List;
 public class Homepage {
     private Browser browser;
     private String url = "https://www.darwynn.com";
-    private String inputSearch = "//*[@id=\"app\"]/div[2]/div[2]/div/form/input[1]";
+    private String inputSearchXpath = "//*[@id=\"app\"]/div[2]/div[2]/div/form/input[1]";
 
     public void setDriver(int type) {
         if(type==1){
@@ -38,7 +38,7 @@ public class Homepage {
         browser = new SeleniumBrowser();
     }
 
-    public void search(String key) throws IOException, InterruptedException {
+    public void search(String key) throws Exception {
         if(driver==null) {
             throw new IOException("In search(), driver is null.");
         }
@@ -53,15 +53,9 @@ public class Homepage {
                 return d.getTitle().toLowerCase().endsWith(title);
             }
         });
-        browser.inputText(inputSearch,key);
-        WebElement screenClose = browser.locator("//*[@id=\"app\"]/div[5]/div[2]/img");
-        if(screenClose.isEnabled()){
-            screenClose.click();
-        }
-        WebElement elSearch = browser.locator("//*[@id=\"app\"]/div[2]/div[2]/div/form/input[2]");
-        if(elSearch.isEnabled()){
-            elSearch.click();
-        }
+        browser.inputText(inputSearchXpath,key);
+        browser.clickElement("//*[@id=\"app\"]/div[5]/div[2]/img");
+        browser.clickElement("//*[@id=\"app\"]/div[2]/div[2]/div/form/input[2]");
 //        System.out.println("CurrentUrl: "+driver.getCurrentUrl());
         driver.manage().window().maximize();
         (new WebDriverWait(driver, Duration.ofSeconds(10))).until(new ExpectedCondition<Boolean>() {

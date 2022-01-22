@@ -139,4 +139,14 @@ public class SeleniumBrowserRemote implements Browser {
         return true;
     }
 
+    @Override
+    public void clickElement(String xpath) throws Exception {
+        WebElement btn = locator(xpath);
+        if(btn.isEnabled()){
+            btn.click();
+        }else {
+            throw new Exception("button invaluable:"+xpath);
+        }
+    }
+
 }
