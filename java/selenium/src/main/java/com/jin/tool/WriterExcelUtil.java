@@ -1,12 +1,4 @@
 package com.jin.tool;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -14,47 +6,53 @@ import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
+
+
 public class WriterExcelUtil {
-
-//    private static final Logger LOGGER = LoggerFactory.getLogger(WriterExcelUtil.class.getName());
-
     public static void main(String[] args) {
         searchExcel();
     }
     public static void demo01(){
-    Path pathFolder;
-    pathFolder = Paths.get(System.getProperty("user.dir"), "output/screenshots/");
-    if (Files.notExists(pathFolder)) {
+        Path pathFolder;
+        pathFolder = Paths.get(System.getProperty("user.dir"), "output/screenshots/");
+        if (Files.notExists(pathFolder)) {
 //                Files.createDirectory(screenshotFolder);
-        com.jin.tool.fileToolForWindow.createDirectory(pathFolder.toString());
+            com.jin.tool.fileToolForWindow.createDirectory(pathFolder.toString());
+        }
+        String fileName = "excel" + "_" + "SearchList";//System.nanoTime();
+        Path excelPath = Paths.get(pathFolder.toString(), fileName + ".xlsx");
+        String path = excelPath.toString();//"E://demo.xlsx";
+        String name = "test";
+        List<String> titles = Lists.newArrayList();
+        titles.add("id");
+        titles.add("name");
+        titles.add("age");
+        titles.add("birthday");
+        titles.add("gender");
+        titles.add("date");
+        List<Map<String, Object>> values = Lists.newArrayList();
+        for (int i = 0; i < 10; i++) {
+            Map<String, Object> map = Maps.newHashMap();
+            map.put("id", i + 1D);
+            map.put("name", "test_" + i);
+            map.put("age", i * 1.5);
+            map.put("gender", "man");
+            map.put("birthday", new Date());
+            map.put("date",  Calendar.getInstance());
+            values.add(map);
+        }
+        System.out.println(writerExcel(path, name, titles, values));
     }
-    String fileName = "excel" + "_" + "SearchList";//System.nanoTime();
-    Path excelPath = Paths.get(pathFolder.toString(), fileName + ".xlsx");
-    String path = excelPath.toString();//"E://demo.xlsx";
-    String name = "test";
-    List<String> titles =Lists.newArrayList();
-    titles.add("id");
-    titles.add("name");
-    titles.add("age");
-    titles.add("birthday");
-    titles.add("gender");
-    titles.add("date");
-    List<Map<String, Object>> values = Lists.newArrayList();
-    for (int i = 0; i < 10; i++) {
-        Map<String, Object> map = Maps.newHashMap();
-        map.put("id", i + 1D);
-        map.put("name", "test_" + i);
-        map.put("age", i * 1.5);
-        map.put("gender", "man");
-        map.put("birthday", new Date());
-        map.put("date",  Calendar.getInstance());
-        values.add(map);
-    }
-    System.out.println(writerExcel(path, name, titles, values));
-}
     public static void searchExcel(){
         Path pathFolder;
         pathFolder = Paths.get(System.getProperty("user.dir"), "output/screenshots/");
@@ -129,6 +127,7 @@ public class WriterExcelUtil {
         }
         // 设置表格默认列宽度为15个字节
         sheet.setDefaultColumnWidth((short) 15);
+        sheet.setColumnWidth(2,60*256);
         // 生成样式
         Map<String, CellStyle> styles = createStyles(workbook);
         /*
@@ -234,8 +233,8 @@ public class WriterExcelUtil {
 
         // 文件头样式
         CellStyle headerStyle = wb.createCellStyle();
-        headerStyle.setAlignment(HorizontalAlignment.CENTER);
-        headerStyle.setVerticalAlignment(VerticalAlignment.CENTER);
+//        headerStyle.setAlignment(HorizontalAlignment.CENTER);
+//        headerStyle.setVerticalAlignment(VerticalAlignment.CENTER);
         headerStyle.setFillForegroundColor(IndexedColors.LIGHT_BLUE.getIndex()); // 前景色
         headerStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND); // 颜色填充方式
         headerStyle.setWrapText(true);
@@ -261,8 +260,8 @@ public class WriterExcelUtil {
 
         // 正文样式A
         CellStyle cellStyleA = wb.createCellStyle();
-        cellStyleA.setAlignment(HorizontalAlignment.CENTER); // 居中设置
-        cellStyleA.setVerticalAlignment(VerticalAlignment.CENTER);
+//        cellStyleA.setAlignment(HorizontalAlignment.CENTER); // 居中设置
+//        cellStyleA.setVerticalAlignment(VerticalAlignment.CENTER);
         cellStyleA.setWrapText(true);
         cellStyleA.setBorderRight(BorderStyle.THIN);
         cellStyleA.setRightBorderColor(IndexedColors.BLACK.getIndex());
@@ -277,8 +276,8 @@ public class WriterExcelUtil {
 
         // 正文样式B:添加前景色为浅黄色
         CellStyle cellStyleB = wb.createCellStyle();
-        cellStyleB.setAlignment(HorizontalAlignment.CENTER);
-        cellStyleB.setVerticalAlignment(VerticalAlignment.CENTER);
+//        cellStyleB.setAlignment(HorizontalAlignment.CENTER);
+//        cellStyleB.setVerticalAlignment(VerticalAlignment.CENTER);
         cellStyleB.setFillForegroundColor(IndexedColors.LIGHT_YELLOW.getIndex());
         cellStyleB.setFillPattern(FillPatternType.SOLID_FOREGROUND);
         cellStyleB.setWrapText(true);
@@ -294,5 +293,25 @@ public class WriterExcelUtil {
         styles.put("cellB", cellStyleB);
 
         return styles;
+    }
+    public static String getValue(Cell c){
+        //https://www.cnblogs.com/allforone/p/4146346.html
+        if(c==null) return "";
+        if(c.getCellType()== CellType.BOOLEAN){
+            return String.valueOf(c.getBooleanCellValue());
+        }else if(c.getCellType()==CellType.NUMERIC){
+            Object i = null;
+            Long lV = Math.round(c.getNumericCellValue());
+            Double dV = c.getNumericCellValue();
+            if(Double.parseDouble(lV+"0")==dV){
+                i=lV;
+            }else {
+                i=dV;
+            }
+            DecimalFormat df=new DecimalFormat("#.####");
+            return String.valueOf(df.format(i));
+        }else {
+            return String.valueOf(c.getStringCellValue());
+        }
     }
 }
