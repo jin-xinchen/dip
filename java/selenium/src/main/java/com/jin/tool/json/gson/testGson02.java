@@ -55,7 +55,7 @@ public class testGson02 {
 
         Gson gson = new Gson();
 
-        java.lang.reflect.Type userListType = new TypeToken<ArrayList<User>>() {
+        java.lang.reflect.Type userListType = new TypeToken<ArrayList<com.jin.tool.json.gson.User>>() {
         }.getType();
 
         ArrayList<User> userArray = gson.fromJson(userJson, userListType);
@@ -71,7 +71,7 @@ public class testGson02 {
 
         Gson gson = new Gson();
 
-        User[] userArray = gson.fromJson(userJson, User[].class);
+        User[] userArray = gson.fromJson(userJson, com.jin.tool.json.gson.User[].class);
 
         for(User user : userArray) {
             System.out.println(user);

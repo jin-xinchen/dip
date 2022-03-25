@@ -2,13 +2,11 @@ package com.jin.po.darwynn;
 
 import com.jin.factory.Browser;
 import com.jin.factory.SeleniumBrowser;
-import org.jdom2.Element;
+//import org.jdom2.Element;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.IOException;

@@ -16,10 +16,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-import java.time.Duration;
+//import java.time.Duration;
 import java.util.Collections;
 
-public class SeleniumBrowser implements Browser{
+public class SeleniumBrowser implements Browser {
     public static void main(String[] args) {
        String s = System.getProperty("webdriver.firefox.bin");
         System.out.println(s);
@@ -125,7 +125,7 @@ public class SeleniumBrowser implements Browser{
     @Override
     public void logScreenshot() throws IOException, InterruptedException {
         Path tmpPath = com.jin.tool.fileToolForWindow.getScreenshotPath();
-        this.screenshot(tmpPath);
+        screenshot(tmpPath);
     }
     @Override
     public boolean getDisplay(String xpath){

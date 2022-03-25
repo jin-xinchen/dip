@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58db0468-ae04-47fc-8d97-5d0628b6afd8" name="Default Changelist" comment="" />
+    <list default="true" id="58db0468-ae04-47fc-8d97-5d0628b6afd8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/jin/tool/Stream/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/jin/tool/Stream/MenuTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jin/factory/BrowserSelenium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jin/factory/BrowserSelenium.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jin/factory/SeleniumBrowser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jin/factory/SeleniumBrowser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jin/factory/SeleniumBrowserRemote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jin/factory/SeleniumBrowserRemote.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jin/po/darwynn/Homepage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jin/po/darwynn/Homepage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jin/tool/json/gson/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jin/tool/json/gson/Department.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jin/tool/json/gson/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jin/tool/json/gson/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jin/tool/json/gson/testGson02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jin/tool/json/gson/testGson02.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,10 +25,15 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit3 Test Class" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
   <component name="ProjectId" id="23F4HylqmPeBGBH2io4as5lLFMU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -25,18 +41,29 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit3" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3" value="junit.framework.TestCase" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
-  <component name="RunManager" selected="TestNG.DDT2.TestLogin">
-    <configuration name="OneByFireFox" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.jin.OneByFireFox" />
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="junit.framework.TestCase" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.jin.tool.Stream" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.MenuTest.testTesttree">
+    <configuration name="EntireScreenshot" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.jin.screenshot.EntireScreenshot" />
       <module name="selenium" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.jin.*" />
+          <option name="PATTERN" value="com.jin.screenshot.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -44,28 +71,73 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DDT2.TestLogin" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="testGson02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.jin.tool.json.gson.testGson02" />
       <module name="selenium" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.jin.thymeleaf.jpamysql8.*" />
+          <option name="PATTERN" value="com.jin.tool.json.gson.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.jin.thymeleaf.jpamysql8" />
-      <option name="MAIN_CLASS_NAME" value="com.jin.thymeleaf.jpamysql8.DDT2" />
-      <option name="METHOD_NAME" value="TestLogin" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MenuTest.testTesttree" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="selenium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jin.tool.Stream.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.jin.tool.Stream" />
+      <option name="MAIN_CLASS_NAME" value="com.jin.tool.Stream.MenuTest" />
+      <option name="METHOD_NAME" value="testTesttree" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MenuTest.testtree" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="selenium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jin.tool.Stream.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.jin.tool.Stream" />
+      <option name="MAIN_CLASS_NAME" value="com.jin.tool.Stream.MenuTest" />
+      <option name="METHOD_NAME" value="testtree" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SeleniumBrowserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="selenium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jin.factory.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.jin.factory" />
+      <option name="MAIN_CLASS_NAME" value="com.jin.factory.SeleniumBrowserTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.DDT2.TestLogin" />
-        <item itemvalue="Application.OneByFireFox" />
+        <item itemvalue="JUnit.MenuTest.testTesttree" />
+        <item itemvalue="JUnit.MenuTest.testtree" />
+        <item itemvalue="Application.testGson02" />
+        <item itemvalue="JUnit.SeleniumBrowserTest" />
+        <item itemvalue="Application.EntireScreenshot" />
       </list>
     </recent_temporary>
   </component>
@@ -79,6 +151,18 @@
       <updated>1641316420453</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -95,5 +179,9 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

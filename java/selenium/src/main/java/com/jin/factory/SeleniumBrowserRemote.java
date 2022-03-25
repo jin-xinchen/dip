@@ -17,7 +17,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-import java.time.Duration;
+//import java.time.Duration;
 import java.util.Collections;
 
 public class SeleniumBrowserRemote implements Browser {
@@ -123,6 +123,7 @@ public class SeleniumBrowserRemote implements Browser {
     public void logScreenshot() throws IOException, InterruptedException {
         Path tmpPath = com.jin.tool.fileToolForWindow.getScreenshotPath();
         this.screenshot(tmpPath);
+
     }
     @Override
     public boolean getDisplay(String xpath){

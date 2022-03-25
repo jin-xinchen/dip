@@ -8,7 +8,7 @@ public class Department {
     public Department(long id, String name, User[] users) {
         this.id = id;
         this.name = name;
-        this.users = users;
+        users = users;
     }
 
     public long getId() {
@@ -32,6 +32,6 @@ public class Department {
     }
 
     public void setUsers(User[] users) {
-        this.users = users;
+        users = users;
     }
 }

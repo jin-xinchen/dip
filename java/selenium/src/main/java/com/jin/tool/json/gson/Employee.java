@@ -43,7 +43,7 @@ public class Employee {
         return address;
     }
     public void setAddress(Address address) {
-        this.address = address;
+        address = address;
     }
     public long[] getPhoneNumbers() {
         return phoneNumbers;
