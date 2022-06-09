@@ -6,15 +6,19 @@ public class Link {
 //    <link rel="shipment" href="https://soa-gw.canadapost.ca/rs/0009833772/0009833772/shipment/906161654537700282" media-type="application/vnd.cpc.shipment-v8+xml"/>
 //    <link rel="shipment" href="https://soa-gw.canadapost.ca/rs/0009833772/0009833772/shipment/236271654537760473" media-type="application/vnd.cpc.shipment-v8+xml"/>
 //</shipments>
-String rel="shipment";
-String href="";
-String mediaType="";
+    String rel="shipment";
+    String href="";
+    String mediaType="application/vnd.cpc.shipment-v8+xml";
 
-    public String getRef() {
+    public String toXML(){
+        return "<link rel=\"group\" href=\""+href+"\" media-type=\""+mediaType+"\"/>\n";
+    }
+
+    public String getRel() {
         return rel;
     }
 
-    public void setRef(String rel) {
+    public void setRel(String rel) {
         this.rel = rel;
     }
 
